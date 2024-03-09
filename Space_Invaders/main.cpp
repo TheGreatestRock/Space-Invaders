@@ -1,4 +1,6 @@
 #include "gamewindow.h"
+#include "mainwindow.h"
+#include "menuwindow.h"
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
@@ -6,7 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    GameWindow window;
+    MainWindow window;
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {
