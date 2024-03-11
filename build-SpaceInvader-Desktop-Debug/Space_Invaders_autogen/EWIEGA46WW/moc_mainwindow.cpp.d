@@ -1,6 +1,7 @@
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/mainwindow.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/moc_predefs.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
@@ -72,7 +73,9 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/QColor \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/QKeyEvent \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/QPainter \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h \
@@ -85,13 +88,16 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/qpainter.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpolygon.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qregion.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \

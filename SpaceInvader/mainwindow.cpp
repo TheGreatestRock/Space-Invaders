@@ -28,6 +28,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(menuWindow, &MenuWindow::goToGame, this, &MainWindow::goToGame);
     connect(gameWindow, &GameWindow::goToMenu, this, &MainWindow::goToMenu);
+    connect(gameWindow, &GameWindow::goToMenuWin, this, &MainWindow::goToMenuWin);
+
+}
+
+void MainWindow::paintEvent(QPaintEvent *event)
+{
+    QMainWindow::paintEvent(event); // Call base class implementation
+
+    // Now paint the "You Win!" message
+    QPainter painter(this);
+    painter.setPen(QColor(255, 255, 255));
+    painter.setFont(QFont("Arial", 30));
+    painter.drawText(100, 100, "You Win!");
 }
 
 void MainWindow::goToMenu()
@@ -42,6 +55,14 @@ void MainWindow::goToGame()
     gameWindow->setFocus();
     gameWindow->setFocusPolicy(Qt::StrongFocus);
     setCentralWidget(gameWindow);
+}
+
+void MainWindow::goToMenuWin()
+{
+    menuWindow->setFocus();
+    menuWindow->setFocusPolicy(Qt::StrongFocus);
+    setCentralWidget(menuWindow);
+    repaint();
 }
 
 void MainWindow::handlePlayButtonClicked()

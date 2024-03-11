@@ -5,36 +5,38 @@
 #include <QWidget>
 #include <QTimer>
 #include <QKeyEvent>
-#include <QDebug>
+#include <QList>
 #include "player.h"
 #include "bullet.h"
-#include "invader.h"
-
+#include "invader.h" // Include the Invader class header file
 
 class GameWindow : public QWidget {
     Q_OBJECT
+
 public:
-    explicit GameWindow(QWidget *parent = nullptr);
+    GameWindow(QWidget *parent = nullptr);
     ~GameWindow();
-    void start();
 
 signals:
     void goToMenu();
+    void goToMenuWin();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
+
+private slots:
     void updateGame();
+    void start();
 
 private:
-    QTimer* timer;
+    QTimer *timer;
+    Player player;
+    QList<Bullet*> bullets;
     bool leftPressed;
     bool rightPressed;
-    bool spacePressed;
-    Player player;
-    Bullet bullet;
-    Invader invader;
+    QList<Invader*> invader;
 };
 
 #endif // GAMEWINDOW_H

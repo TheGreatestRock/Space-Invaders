@@ -208,7 +208,7 @@ build Space_Invaders_autogen_timestamp_deps: phony CMakeFiles/Space_Invaders_aut
 #############################################
 # Utility command for Space_Invaders_autogen
 
-build Space_Invaders_autogen: phony CMakeFiles/Space_Invaders_autogen Space_Invaders_autogen/include/ui_mainwindow.h Space_Invaders_autogen/timestamp Space_Invaders_autogen/mocs_compilation.cpp Space_Invaders_autogen_timestamp_deps
+build Space_Invaders_autogen: phony CMakeFiles/Space_Invaders_autogen Space_Invaders_autogen/include/ui_MainWindow.h Space_Invaders_autogen/timestamp Space_Invaders_autogen/mocs_compilation.cpp Space_Invaders_autogen_timestamp_deps
 
 
 #############################################
@@ -233,13 +233,13 @@ build Space_Invaders_autogen/timestamp Space_Invaders_autogen/mocs_compilation.c
 #############################################
 # Phony custom command for CMakeFiles\Space_Invaders_autogen_timestamp_deps
 
-build CMakeFiles/Space_Invaders_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Space_Invaders_autogen_timestamp_deps: phony C$:/Qt/5.15.2/mingw81_64/bin/uic.exe C$:/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a C$:/Qt/5.15.2/mingw81_64/bin/moc.exe
+build CMakeFiles/Space_Invaders_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Space_Invaders_autogen_timestamp_deps: phony C$:/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a C$:/Qt/5.15.2/mingw81_64/bin/moc.exe C$:/Qt/5.15.2/mingw81_64/bin/uic.exe
 
 
 #############################################
 # Phony custom command for CMakeFiles\Space_Invaders_autogen
 
-build CMakeFiles/Space_Invaders_autogen Space_Invaders_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/Space_Invaders_autogen ${cmake_ninja_workdir}Space_Invaders_autogen/include/ui_mainwindow.h: phony Space_Invaders_autogen/timestamp || Space_Invaders_autogen_timestamp_deps
+build CMakeFiles/Space_Invaders_autogen Space_Invaders_autogen/include/ui_MainWindow.h | ${cmake_ninja_workdir}CMakeFiles/Space_Invaders_autogen ${cmake_ninja_workdir}Space_Invaders_autogen/include/ui_MainWindow.h: phony Space_Invaders_autogen/timestamp || Space_Invaders_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

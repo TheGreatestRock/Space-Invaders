@@ -1,6 +1,6 @@
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/EWIEGA46WW/moc_gamewindow.cpp: C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/gamewindow.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/moc_predefs.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
@@ -16,10 +16,8 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h \
@@ -32,7 +30,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qline.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qlocale.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qmap.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qmargins.h \
@@ -64,7 +61,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h \
@@ -72,6 +68,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/QColor \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/QKeyEvent \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h \

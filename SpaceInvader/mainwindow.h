@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPainter>
 #include "ui_mainwindow.h"
 #include "gamewindow.h"
 #include "menuwindow.h"
@@ -24,6 +25,8 @@ private slots:
     void handleExitButtonClicked();
     void goToMenu();
     void goToGame();
+    void goToMenuWin();
+    void paintEvent(QPaintEvent *event);
 
 private:
     Ui::MainWindow *ui;

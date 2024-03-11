@@ -2,7 +2,7 @@
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/bullet.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/gamewindow.h
  mmc:Q_OBJECT
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QList
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
@@ -18,10 +18,8 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h
@@ -34,7 +32,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qline.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qlocale.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qmap.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qmargins.h
@@ -66,7 +63,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h
@@ -74,6 +70,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/QColor
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/QKeyEvent
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h
@@ -315,6 +312,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/i
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/mainwindow.h
  mmc:Q_OBJECT
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QList
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
@@ -386,7 +384,9 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/QColor
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/QKeyEvent
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/QPainter
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h
@@ -399,13 +399,16 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpainter.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpolygon.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qregion.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h

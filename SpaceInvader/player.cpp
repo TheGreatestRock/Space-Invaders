@@ -1,8 +1,8 @@
 // Player.cpp
 #include "player.h"
 
-Player::Player(int x, int y, int width, int height, int speed)
-    : rect(x, y, width, height), speed(speed) {}
+Player::Player(int x, int y, int width, int height, int speed, QColor color)
+    : rect(x, y, width, height), speed(speed), color(color) {}
 
 QRect Player::getRect() const {
     return rect;
@@ -12,6 +12,13 @@ QRect Player::getCannon() const {
     return QRect(rect.left() + rect.width() / 2 - 2, rect.bottom() - 10, 4, 10);
 }
 
+QColor Player::getColor() const {
+    return color;
+}
+
+void Player::setColor(const QColor &color) {
+    this->color = color;
+}
 
 void Player::moveLeft() {
     rect.moveLeft(rect.left() - speed);
