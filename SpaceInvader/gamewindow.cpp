@@ -1,6 +1,8 @@
 // GameWindow.cpp
 #include "gamewindow.h"
 #include <QPainter>
+#include <QDebug>
+
 
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
     player(window()->height()/1.5, window()->width()/1.5, 20, 5, 5),
@@ -11,6 +13,7 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &GameWindow::updateGame);
     timer->start(20); // Update game every 20 milliseconds
+    qDebug() << timer->isActive();
     leftPressed = false;
     rightPressed = false;
     spacePressed = false;
@@ -59,15 +62,16 @@ void GameWindow::keyReleaseEvent(QKeyEvent *event) {
 
 void GameWindow::updateGame() {
     // Update player position based on key presses
+    qDebug() << "update";
+
     if (leftPressed)
         player.moveLeft();
     if (rightPressed)
         player.moveRight();
-
-    // Update game state (invader movement, bullet movement, collision detection, etc.)
-
-    // Update display
-    update();
+    if (spacePressed) {
+        bullet.setPos(player.getRect().x() + player.getRect().width() / 2 - bullet.getRect().width() / 2, player.getRect().y() - bullet.getRect().height());
+        bullet.move();
+    }
 }
 
 void GameWindow::start() {

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
+#include <QKeyEvent>
 #include <QApplication>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -31,11 +32,15 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::goToMenu()
 {
+    menuWindow->setFocus();
+    menuWindow->setFocusPolicy(Qt::StrongFocus);
     setCentralWidget(menuWindow);
 }
 
 void MainWindow::goToGame()
 {
+    gameWindow->setFocus();
+    gameWindow->setFocusPolicy(Qt::StrongFocus);
     setCentralWidget(gameWindow);
 }
 
