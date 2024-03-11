@@ -11,7 +11,7 @@ public:
     void move();
     void setDirection(int direction);
     int getDirection() const;
-
+    void setPos(int x, int y);
 private:
     QRect rect;
     int speed;

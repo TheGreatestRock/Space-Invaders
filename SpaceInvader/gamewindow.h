@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QTimer>
 #include <QKeyEvent>
+#include <QDebug>
 #include "player.h"
 #include "bullet.h"
 #include "invader.h"
@@ -15,6 +16,10 @@ class GameWindow : public QWidget {
 public:
     explicit GameWindow(QWidget *parent = nullptr);
     ~GameWindow();
+    void start();
+
+signals:
+    void goToMenu();
 
 protected:
     void paintEvent(QPaintEvent *event) override;

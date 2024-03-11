@@ -19,3 +19,7 @@ void Invader::setDirection(int direction) {
 int Invader::getDirection() const {
     return direction;
 }
+
+void Invader::setPos(int x, int y) {
+    rect.moveTo(x, y);
+}

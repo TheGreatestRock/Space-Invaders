@@ -11,7 +11,7 @@ public:
     QRect getCannon() const;
     void moveLeft();
     void moveRight();
-
+    void setPos(int x, int y);
 private:
     QRect rect;
     int speed;

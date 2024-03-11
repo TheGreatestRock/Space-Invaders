@@ -11,3 +11,7 @@ QRect Bullet::getRect() const {
 void Bullet::move() {
     rect.moveTop(rect.top() - speed);
 }
+
+void Bullet::setPos(int x, int y) {
+    rect.moveTo(x, y);
+}

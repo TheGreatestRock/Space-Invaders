@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "SpaceInvader.exe"
+			"path" : "Space_Invaders.exe"
 		},
 		{
-			"path" : "SpaceInvader.pdb"
+			"path" : "Space_Invaders.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -44,13 +44,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 69,
+				"line" : 76,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 52,
+				"line" : 59,
 				"parent" : 0
 			},
 			{
@@ -151,7 +151,7 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/SpaceInvader_autogen/include"
+					"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/include"
 				},
 				{
 					"backtrace" : 3,
@@ -197,21 +197,26 @@
 			[
 				0,
 				1,
-				2
+				4,
+				6,
+				8,
+				10,
+				12,
+				14
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "SpaceInvader_autogen::@6890427a1f51a3e7e1df"
+			"id" : "Space_Invaders_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "SpaceInvader_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "Space_Invaders_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "SpaceInvader::@6890427a1f51a3e7e1df",
+	"id" : "Space_Invaders::@6890427a1f51a3e7e1df",
 	"install" : 
 	{
 		"destinations" : 
@@ -265,8 +270,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "SpaceInvader",
-	"nameOnDisk" : "SpaceInvader.exe",
+	"name" : "Space_Invaders",
+	"nameOnDisk" : "Space_Invaders.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -280,7 +285,21 @@
 			[
 				0,
 				1,
-				2
+				4,
+				6,
+				8,
+				10,
+				12,
+				14
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				2,
+				15,
+				17
 			]
 		},
 		{
@@ -288,24 +307,20 @@
 			"sourceIndexes" : 
 			[
 				3,
-				6
-			]
-		},
-		{
-			"name" : "",
-			"sourceIndexes" : 
-			[
-				4,
 				5,
-				7
+				7,
+				9,
+				11,
+				13,
+				16
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				8,
-				9
+				18,
+				19
 			]
 		}
 	],
@@ -315,7 +330,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/SpaceInvader_autogen/mocs_compilation.cpp",
+			"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -326,48 +341,103 @@
 		},
 		{
 			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "Space_Invaders_fr_FR.ts",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gamewindow.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "gamewindow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "player.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "player.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "bullet.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "bullet.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "invader.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "invader.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "mainwindow.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "mainwindow.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "mainwindow.h",
-			"sourceGroupIndex" : 1
+			"path" : "menuwindow.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "menuwindow.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"path" : "mainwindow.ui",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 1,
-			"isGenerated" : true,
-			"path" : "SpaceInvader_fr_FR.ts",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/SpaceInvader_autogen/include/ui_mainwindow.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/SpaceInvader_autogen/timestamp",
+			"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/include/ui_mainwindow.h",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "SpaceInvader_fr_FR.ts.rule",
+			"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/timestamp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "Space_Invaders_fr_FR.ts.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/SpaceInvader_autogen/timestamp.rule",
+			"path" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/timestamp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

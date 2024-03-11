@@ -3,11 +3,11 @@
 #include <QPainter>
 
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
-    player(200, 250, 20, 5, 5),
+    player(window()->height()/1.5, window()->width()/1.5, 20, 5, 5),
     bullet(0, 0, 5, 5, 5),
     invader(0, 0, 20, 20, 5)
 {
-    setFixedSize(400, 300);
+    qDebug() << "GameWindow constructor";
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &GameWindow::updateGame);
     timer->start(20); // Update game every 20 milliseconds
@@ -32,21 +32,29 @@ void GameWindow::paintEvent(QPaintEvent *event) {
 }
 
 void GameWindow::keyPressEvent(QKeyEvent *event) {
+    qDebug() << "Key pressed: " << event->key();
     if (event->key() == Qt::Key_Left)
         leftPressed = true;
     else if (event->key() == Qt::Key_Right)
         rightPressed = true;
     else if (event->key() == Qt::Key_Space)
         spacePressed = true;
+    if (event->key() == Qt::Key_Escape) {
+        emit goToMenu();
+    }
 }
 
 void GameWindow::keyReleaseEvent(QKeyEvent *event) {
+    qDebug() << "Key released: " << event->key();
     if (event->key() == Qt::Key_Left)
         leftPressed = false;
     else if (event->key() == Qt::Key_Right)
         rightPressed = false;
     else if (event->key() == Qt::Key_Space)
         spacePressed = false;
+    if (event->key() == Qt::Key_Escape) {
+        emit goToMenu();
+    }
 }
 
 void GameWindow::updateGame() {
@@ -60,4 +68,24 @@ void GameWindow::updateGame() {
 
     // Update display
     update();
+}
+
+void GameWindow::start() {
+    // Set initial player position
+    player.setPos(200, 250);
+
+    // Set initial bullet position (if necessary)
+    bullet.setPos(0, 0);
+
+    // Set initial invader position (if necessary)
+    invader.setPos(0, 0);
+
+    // Start the game timer
+    if (!timer->isActive())
+        timer->start(20); // Update game every 20 milliseconds
+
+    // Reset key presses
+    leftPressed = false;
+    rightPressed = false;
+    spacePressed = false;
 }

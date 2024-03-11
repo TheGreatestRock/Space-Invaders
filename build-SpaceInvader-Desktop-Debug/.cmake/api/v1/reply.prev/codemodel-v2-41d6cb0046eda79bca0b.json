@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-581083bc1027d235f576.json",
+					"jsonFile" : "directory-.-Debug-6f945993ee9a65eeacd1.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -30,7 +30,7 @@
 					[
 						0
 					],
-					"name" : "SpaceInvader",
+					"name" : "Space_Invaders",
 					"targetIndexes" : 
 					[
 						0,
@@ -43,23 +43,23 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "SpaceInvader::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SpaceInvader-Debug-a7631a2a5296a0f48470.json",
-					"name" : "SpaceInvader",
+					"id" : "Space_Invaders::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Space_Invaders-Debug-ef90b6f63ea4155a1cb1.json",
+					"name" : "Space_Invaders",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "SpaceInvader_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SpaceInvader_autogen-Debug-72a8802705534e8723da.json",
-					"name" : "SpaceInvader_autogen",
+					"id" : "Space_Invaders_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Space_Invaders_autogen-Debug-c110c9f8878194dfbb9a.json",
+					"name" : "Space_Invaders_autogen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "SpaceInvader_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SpaceInvader_autogen_timestamp_deps-Debug-774a6ac9db91668fee24.json",
-					"name" : "SpaceInvader_autogen_timestamp_deps",
+					"id" : "Space_Invaders_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Space_Invaders_autogen_timestamp_deps-Debug-cf73c339934270bd59c0.json",
+					"name" : "Space_Invaders_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
 			]

@@ -20,3 +20,7 @@ void Player::moveLeft() {
 void Player::moveRight() {
     rect.moveRight(rect.right() + speed);
 }
+
+void Player::setPos(int x, int y) {
+    rect.moveTo(x, y);
+}
