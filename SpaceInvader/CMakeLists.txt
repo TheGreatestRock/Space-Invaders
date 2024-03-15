@@ -50,6 +50,9 @@ else()
             mainwindow.h mainwindow.cpp
             menuwindow.h menuwindow.cpp
             mainwindow.ui
+            menuwindow.ui
+
+            colorpickerwindow.h colorpickerwindow.cpp
         )
     endif()
 

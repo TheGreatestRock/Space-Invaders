@@ -8,7 +8,7 @@
 #include <QList>
 #include "player.h"
 #include "bullet.h"
-#include "invader.h" // Include the Invader class header file
+#include "invader.h"
 
 class GameWindow : public QWidget {
     Q_OBJECT

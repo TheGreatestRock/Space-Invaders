@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QPainter>
-#include "ui_mainwindow.h"
 #include "gamewindow.h"
 #include "menuwindow.h"
 
@@ -19,19 +18,22 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
 private slots:
-    void handlePlayButtonClicked();
-    void handleOptionsButtonClicked();
-    void handleExitButtonClicked();
     void goToMenu();
     void goToGame();
     void goToMenuWin();
-    void paintEvent(QPaintEvent *event);
+    void handlePlayButtonClicked();
+    void handleOptionsButtonClicked();
+    void handleExitButtonClicked();
 
 private:
     Ui::MainWindow *ui;
     GameWindow *gameWindow;
     MenuWindow *menuWindow;
+    bool gameWon;
 };
 
 #endif // MAINWINDOW_H

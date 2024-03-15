@@ -83,6 +83,12 @@
 			null
 		],
 		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/colorpickerwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_colorpickerwindow.cpp",
+			null
+		],
+		[
 			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/gamewindow.h",
 			"MU",
 			"EWIEGA46WW/moc_gamewindow.cpp",
@@ -166,6 +172,11 @@
 	[
 		[
 			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/bullet.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/colorpickerwindow.cpp",
 			"MU",
 			null
 		],
