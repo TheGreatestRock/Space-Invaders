@@ -62,10 +62,16 @@ void MenuWindow::keyReleaseEvent(QKeyEvent *event) {
 void MenuWindow::openColorPickerWindow() {
     ColorPickerWindow *colorPickerWindow = new ColorPickerWindow(this);
     if (colorPickerWindow->exec() == QDialog::Accepted) {
-        // Color selected, do something with it
+        // Color selected, update corresponding button color
         QColor selectedColor = colorPickerWindow->getColor();
-        // You can emit a signal with the selected color or perform any other action
-        qDebug() << "Selected color: " << selectedColor;
+        QObject *senderButton = sender(); // Get the button that triggered the event
+        if (senderButton == colorBulletButton) {
+            colorBulletButton->setStyleSheet(QString("background-color: %1").arg(selectedColor.name()));
+        } else if (senderButton == colorInvaderButton) {
+            colorInvaderButton->setStyleSheet(QString("background-color: %1").arg(selectedColor.name()));
+        } else if (senderButton == colorShipButton) {
+            colorShipButton->setStyleSheet(QString("background-color: %1").arg(selectedColor.name()));
+        }
     }
     delete colorPickerWindow;
 }

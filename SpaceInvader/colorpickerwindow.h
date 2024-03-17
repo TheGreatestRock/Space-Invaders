@@ -16,6 +16,7 @@ class ColorPickerWindow : public QDialog
 public:
     explicit ColorPickerWindow(QWidget *parent = nullptr);
     QList<QColor> getColors() const;
+    QColor getColor() const;
 
 signals:
     void colorsSelected(const QList<QColor> &selectedColors);

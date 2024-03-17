@@ -42,6 +42,6 @@ void ColorPickerWindow::addColor()
     if (color.isValid()) {
         colors.append(color);
         QListWidgetItem *item = new QListWidgetItem(color.name(), colorListWidget);
-        item->setBackgroundColor(color);
+        item->setBackground(color);
     }
 }
