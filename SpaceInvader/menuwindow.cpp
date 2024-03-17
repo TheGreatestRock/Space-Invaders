@@ -1,53 +1,86 @@
-// menuwindow.cpp
 #include "menuwindow.h"
 
-MenuWindow::MenuWindow(QWidget *parent)
-    : QWidget(parent)
-{
+MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     layout = new QVBoxLayout(this);
-    colorBulletButton = new QPushButton("Choose Bullet Color", this);
-    colorInvaderButton = new QPushButton("Choose Invader Color", this);
-    colorShipButton = new QPushButton("Choose Ship Color", this);
+
+    bulletColorLayout = new QHBoxLayout();
+    bulletColorLabel = new QLabel("Bullet Color:", this);
+    colorBulletButton = new QPushButton("Change color", this);
+    bulletColorLayout->addWidget(bulletColorLabel);
+    bulletColorLayout->addWidget(colorBulletButton);
+
+    invaderColorLayout = new QHBoxLayout();
+    invaderColorLabel = new QLabel("Invader Color:", this);
+    colorInvaderButton = new QPushButton("Change color", this);
+    invaderColorLayout->addWidget(invaderColorLabel);
+    invaderColorLayout->addWidget(colorInvaderButton);
+
+    shipColorLayout = new QHBoxLayout();
+    shipColorLabel = new QLabel("Ship Color:", this);
+    colorShipButton = new QPushButton("Change color", this);
+    shipColorLayout->addWidget(shipColorLabel);
+    shipColorLayout->addWidget(colorShipButton);
+
+    nbInvaderLayout = new QHBoxLayout();
+    QLabel *nbInvaderLabel = new QLabel("Number of Invader:", this);
     nbInvaderSpinBox = new QSpinBox(this);
-    nbInvaderSpinBox->setRange(1, 100);
+    nbInvaderSpinBox->setRange(1, 10);
+    nbInvaderSpinBox->setValue(5);
+    nbInvaderLayout->addWidget(nbInvaderLabel);
+    nbInvaderLayout->addWidget(nbInvaderSpinBox);
+
+    returnButton = new QPushButton("Return to Main", this);
 
     connect(colorBulletButton, &QPushButton::clicked, this, &MenuWindow::handleColorBulletButtonClicked);
     connect(colorInvaderButton, &QPushButton::clicked, this, &MenuWindow::handleColorInvaderButtonClicked);
     connect(colorShipButton, &QPushButton::clicked, this, &MenuWindow::handleColorShipButtonClicked);
     connect(nbInvaderSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MenuWindow::handleNbInvaderValueChanged);
+    connect(returnButton, &QPushButton::clicked, this, &MenuWindow::returnToMain); // Connect the return button to the new slot
 
-    layout->addWidget(colorBulletButton);
-    layout->addWidget(colorInvaderButton);
-    layout->addWidget(colorShipButton);
-    layout->addWidget(nbInvaderSpinBox);
+    layout->addLayout(bulletColorLayout);
+    layout->addLayout(invaderColorLayout);
+    layout->addLayout(shipColorLayout);
+    layout->addLayout(nbInvaderLayout);
+    layout->addWidget(returnButton);
     setLayout(layout);
 }
 
-MenuWindow::~MenuWindow()
-{
+MenuWindow::~MenuWindow() {
+    delete layout;
+    delete bulletColorLayout;
+    delete bulletColorLabel;
+    delete colorBulletButton;
+    delete invaderColorLayout;
+    delete invaderColorLabel;
+    delete colorInvaderButton;
+    delete shipColorLayout;
+    delete shipColorLabel;
+    delete colorShipButton;
+    delete nbInvaderLayout;
+    delete nbInvaderSpinBox;
+    delete returnButton;
 }
 
 void MenuWindow::handleColorBulletButtonClicked() {
-    openColorPickerWindow();
+    openColorPickerWindow(colorBulletButton);
 }
 
 void MenuWindow::handleColorInvaderButtonClicked() {
-    openColorPickerWindow();
+    openColorPickerWindow(colorInvaderButton);
 }
 
 void MenuWindow::handleColorShipButtonClicked() {
-    openColorPickerWindow();
+    openColorPickerWindow(colorShipButton);
 }
 
 void MenuWindow::handleNbInvaderValueChanged(int value) {
     qDebug() << "Nb Invader Value Changed: " << value;
 }
 
-
 void MenuWindow::keyPressEvent(QKeyEvent *event) {
     qDebug() << "Key pressed: " << event->key();
     if (event->key() == Qt::Key_Escape) {
-        emit goToMenu();
+        emit goToMain();
         qDebug() << "Escape";
     }
 }
@@ -59,19 +92,18 @@ void MenuWindow::keyReleaseEvent(QKeyEvent *event) {
     }
 }
 
-void MenuWindow::openColorPickerWindow() {
-    ColorPickerWindow *colorPickerWindow = new ColorPickerWindow(this);
+void MenuWindow::openColorPickerWindow(QPushButton *button) {
+    ColorPickerWindow *colorPickerWindow = new ColorPickerWindow(colors.toList(), this);
     if (colorPickerWindow->exec() == QDialog::Accepted) {
-        // Color selected, update corresponding button color
         QColor selectedColor = colorPickerWindow->getColor();
-        QObject *senderButton = sender(); // Get the button that triggered the event
-        if (senderButton == colorBulletButton) {
-            colorBulletButton->setStyleSheet(QString("background-color: %1").arg(selectedColor.name()));
-        } else if (senderButton == colorInvaderButton) {
-            colorInvaderButton->setStyleSheet(QString("background-color: %1").arg(selectedColor.name()));
-        } else if (senderButton == colorShipButton) {
-            colorShipButton->setStyleSheet(QString("background-color: %1").arg(selectedColor.name()));
+        colors = colorPickerWindow->getColors().toVector();
+        if (button) {
+            button->setStyleSheet(QString("background-color: %1").arg(selectedColor.name()));
         }
     }
     delete colorPickerWindow;
+}
+
+void MenuWindow::returnToMain() {
+    emit goToMain();
 }

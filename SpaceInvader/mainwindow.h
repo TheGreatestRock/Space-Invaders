@@ -24,7 +24,8 @@ protected:
 private slots:
     void goToMenu();
     void goToGame();
-    void goToMenuWin();
+    void goToMain();
+    void goToMainWin();
     void handlePlayButtonClicked();
     void handleOptionsButtonClicked();
     void handleExitButtonClicked();

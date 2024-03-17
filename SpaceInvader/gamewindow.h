@@ -18,8 +18,8 @@ public:
     ~GameWindow();
 
 signals:
-    void goToMenu();
-    void goToMenuWin();
+    void goToMain();
+    void goToMainWin();
 
 protected:
     void paintEvent(QPaintEvent *event) override;

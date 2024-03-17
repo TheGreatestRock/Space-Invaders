@@ -33,14 +33,14 @@ struct qt_meta_stringdata_GameWindow_t {
 static const qt_meta_stringdata_GameWindow_t qt_meta_stringdata_GameWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "GameWindow"
-QT_MOC_LITERAL(1, 11, 8), // "goToMenu"
+QT_MOC_LITERAL(1, 11, 8), // "goToMain"
 QT_MOC_LITERAL(2, 20, 0), // ""
-QT_MOC_LITERAL(3, 21, 11), // "goToMenuWin"
+QT_MOC_LITERAL(3, 21, 11), // "goToMainWin"
 QT_MOC_LITERAL(4, 33, 10), // "updateGame"
 QT_MOC_LITERAL(5, 44, 5) // "start"
 
     },
-    "GameWindow\0goToMenu\0\0goToMenuWin\0"
+    "GameWindow\0goToMain\0\0goToMainWin\0"
     "updateGame\0start"
 };
 #undef QT_MOC_LITERAL
@@ -83,8 +83,8 @@ void GameWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<GameWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->goToMenu(); break;
-        case 1: _t->goToMenuWin(); break;
+        case 0: _t->goToMain(); break;
+        case 1: _t->goToMainWin(); break;
         case 2: _t->updateGame(); break;
         case 3: _t->start(); break;
         default: ;
@@ -93,14 +93,14 @@ void GameWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _t = void (GameWindow::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameWindow::goToMenu)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameWindow::goToMain)) {
                 *result = 0;
                 return;
             }
         }
         {
             using _t = void (GameWindow::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameWindow::goToMenuWin)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameWindow::goToMainWin)) {
                 *result = 1;
                 return;
             }
@@ -150,13 +150,13 @@ int GameWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void GameWindow::goToMenu()
+void GameWindow::goToMain()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 
 // SIGNAL 1
-void GameWindow::goToMenuWin()
+void GameWindow::goToMainWin()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }

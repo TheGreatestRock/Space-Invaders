@@ -19,9 +19,5 @@
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Change Color</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 </TS>

@@ -751,6 +751,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QColorDialog
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow
@@ -769,6 +770,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistview.h
@@ -1098,6 +1100,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QColorDialog
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton
@@ -1115,6 +1118,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistview.h

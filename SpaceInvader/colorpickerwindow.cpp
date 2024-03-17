@@ -1,8 +1,9 @@
 #include "colorpickerwindow.h"
 
-ColorPickerWindow::ColorPickerWindow(QWidget *parent) : QDialog(parent)
+ColorPickerWindow::ColorPickerWindow(const QList<QColor> &initialColors, QWidget *parent) : QDialog(parent)
 {
     qDebug() << "ColorPickerWindow constructor called";
+
     colorListWidget = new QListWidget(this);
     selectColorButton = new QPushButton("Select Color", this);
     addColorButton = new QPushButton("Add Color", this);
@@ -18,12 +19,20 @@ ColorPickerWindow::ColorPickerWindow(QWidget *parent) : QDialog(parent)
 
     connect(selectColorButton, &QPushButton::clicked, this, &ColorPickerWindow::selectColor);
     connect(addColorButton, &QPushButton::clicked, this, &ColorPickerWindow::addColor);
-
-    // Connect signal for enabling/disabling selectColorButton
     connect(colorListWidget, &QListWidget::itemSelectionChanged, this, &ColorPickerWindow::updateSelectColorButton);
 
     // Initially, disable selectColorButton
     selectColorButton->setEnabled(false);
+
+    // Add initial colors
+    for (const QColor &color : initialColors) {
+        colors.append(color);
+        QListWidgetItem *item = new QListWidgetItem(color.name(), colorListWidget);
+        item->setBackground(color);
+        QVariant variant;
+        variant.setValue(color);
+        item->setData(Qt::UserRole, variant);
+    }
 }
 
 QList<QColor> ColorPickerWindow::getColors() const

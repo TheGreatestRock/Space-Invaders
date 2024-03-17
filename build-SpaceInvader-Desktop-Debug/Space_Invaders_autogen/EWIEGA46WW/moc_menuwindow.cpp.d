@@ -102,6 +102,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QColorDialog \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
@@ -119,6 +120,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistview.h \

@@ -17,8 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->playButton, &QPushButton::clicked, this, &MainWindow::handlePlayButtonClicked);
     connect(ui->menuButton, &QPushButton::clicked, this, &MainWindow::handleOptionsButtonClicked);
     connect(ui->exitButton, &QPushButton::clicked, this, &MainWindow::handleExitButtonClicked);
-    connect(gameWindow, &GameWindow::goToMenu, this, &MainWindow::goToMenu);
-    connect(gameWindow, &GameWindow::goToMenuWin, this, &MainWindow::goToMenuWin);
+    connect(menuWindow, &MenuWindow::goToMain, this, &MainWindow::goToMain);
+    connect(gameWindow, &GameWindow::goToMain, this, &MainWindow::goToMain);
+    connect(gameWindow, &GameWindow::goToMainWin, this, &MainWindow::goToMainWin);
 }
 
 void MainWindow::paintEvent(QPaintEvent *event)
@@ -47,13 +48,16 @@ void MainWindow::goToGame()
     setCentralWidget(gameWindow);
 }
 
-void MainWindow::goToMenuWin()
+void MainWindow::goToMain()
+{
+    setCentralWidget(ui->centralwidget);
+}
+
+void MainWindow::goToMainWin()
 {
     gameWon = true;
-    menuWindow->setFocus();
-    menuWindow->setFocusPolicy(Qt::StrongFocus);
-    setCentralWidget(menuWindow);
-    repaint();
+    update();
+    goToMain();
 }
 
 void MainWindow::handlePlayButtonClicked()

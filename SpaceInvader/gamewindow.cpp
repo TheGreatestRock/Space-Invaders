@@ -65,7 +65,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event) {
         bullets.append(newBullet);
     }
     if (event->key() == Qt::Key_Escape) {
-        emit goToMenu();
+        emit goToMain();
         qDebug() << "Escape";
     }
 }
@@ -131,7 +131,7 @@ void GameWindow::updateGame() {
         }
     }
     if (invader.isEmpty()) {
-        emit goToMenuWin();
+        emit goToMainWin();
         timer->stop();
     }
     // Update the window
