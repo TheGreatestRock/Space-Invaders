@@ -309,6 +309,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/colorpickerwindow.h
  mmc:Q_OBJECT
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractitemmodel.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h
@@ -322,7 +323,9 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/c
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h
@@ -367,12 +370,12 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/c
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qvariant.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/QColor
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h
@@ -401,6 +404,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/c
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h
@@ -748,6 +752,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QSpinBox
@@ -1062,7 +1067,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/QColor
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/QKeyEvent
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h
@@ -1095,6 +1099,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QSpinBox
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout

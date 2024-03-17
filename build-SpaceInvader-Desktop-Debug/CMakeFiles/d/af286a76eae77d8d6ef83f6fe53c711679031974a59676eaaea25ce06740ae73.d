@@ -112,6 +112,7 @@ Space_Invaders_autogen/timestamp: \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QSpinBox \

@@ -1,5 +1,6 @@
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/EWIEGA46WW/moc_colorpickerwindow.cpp: C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/colorpickerwindow.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/moc_predefs.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
@@ -13,7 +14,9 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h \
@@ -58,12 +61,12 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qvariant.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtGui/QColor \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h \
@@ -92,6 +95,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \

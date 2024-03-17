@@ -1,37 +1,38 @@
-// colorpickerwindow.h
 #ifndef COLORPICKERWINDOW_H
 #define COLORPICKERWINDOW_H
 
 #include <QDialog>
-#include <QColor>
 #include <QListWidget>
 #include <QPushButton>
-#include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QColorDialog>
+#include <QDebug>
+#include <QListWidgetItem>
 
 class ColorPickerWindow : public QDialog
 {
     Q_OBJECT
+
 public:
     explicit ColorPickerWindow(QWidget *parent = nullptr);
     QList<QColor> getColors() const;
     QColor getColor() const;
 
 signals:
-    void colorsSelected(const QList<QColor> &selectedColors);
+    void colorsSelected(const QList<QColor> &colors);
 
 private slots:
     void selectColor();
     void addColor();
+    void updateSelectColorButton();
 
 private:
+    QList<QColor> colors;
     QListWidget *colorListWidget;
     QPushButton *selectColorButton;
     QPushButton *addColorButton;
     QColorDialog *colorDialog;
-
-    QList<QColor> colors;
 };
 
 #endif // COLORPICKERWINDOW_H

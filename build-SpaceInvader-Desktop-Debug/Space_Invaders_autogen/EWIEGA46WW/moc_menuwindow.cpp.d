@@ -71,7 +71,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtGui/QColor \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/QKeyEvent \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h \
@@ -104,6 +103,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QSpinBox \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout \
