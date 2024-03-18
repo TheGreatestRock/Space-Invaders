@@ -1,5 +1,7 @@
 // menuwindow.cpp
 #include "menuwindow.h"
+#include "colorpickerwindow.h"
+#include <QFileInfo>
 
 MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     layout = new QVBoxLayout(this);
@@ -23,7 +25,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     shipColorLayout->addWidget(colorShipButton);
 
     nbInvaderLayout = new QHBoxLayout();
-    QLabel *nbInvaderLabel = new QLabel("Number of Invader:", this);
+    nbInvaderLabel = new QLabel("Number of Invader:", this);
     nbInvaderSpinBox = new QSpinBox(this);
     nbInvaderSpinBox->setRange(1, 100);
     nbInvaderSpinBox->setValue(5);
@@ -31,6 +33,13 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     nbInvaderLayout->addWidget(nbInvaderSpinBox);
 
     returnButton = new QPushButton("Return to Main", this);
+
+    musicLayout = new QHBoxLayout();
+    uploadMusicButton = new QPushButton("Upload Music", this);
+    connect(uploadMusicButton, &QPushButton::clicked, this, &MenuWindow::handleMusicUpload);
+    musicPathLabel = new QLabel(this);
+    musicLayout->addWidget(musicPathLabel);
+    musicLayout->addWidget(uploadMusicButton);
 
     connect(colorBulletButton, &QPushButton::clicked, this, &MenuWindow::handleColorBulletButtonClicked);
     connect(colorInvaderButton, &QPushButton::clicked, this, &MenuWindow::handleColorInvaderButtonClicked);
@@ -42,6 +51,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     layout->addLayout(invaderColorLayout);
     layout->addLayout(shipColorLayout);
     layout->addLayout(nbInvaderLayout);
+    layout->addLayout(musicLayout);
     layout->addWidget(returnButton);
     setLayout(layout);
 
@@ -65,19 +75,25 @@ void MenuWindow::handleNbInvaderValueChanged(int value) {
     saveOptionsToFile();
 }
 
-void MenuWindow::keyPressEvent(QKeyEvent *event) {
-    qDebug() << "Key pressed: " << event->key();
-    if (event->key() == Qt::Key_Escape) {
-        saveOptionsToFile();
-        emit MainButtonClicked();
-        qDebug() << "Escape";
-    }
-}
+void MenuWindow::handleMusicUpload() {
+    QString filePath = QFileDialog::getOpenFileName(this, tr("Open Music File"), QDir::homePath(), tr("Music Files (*.mp3 *.wav)"));
+    if (!filePath.isEmpty()) {
+        QFileInfo fileInfo(filePath);
+        QString musicFolder = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/music/";
+        QDir().mkpath(musicFolder);
+        QString destination = musicFolder + fileInfo.fileName();
 
-void MenuWindow::keyReleaseEvent(QKeyEvent *event) {
-    qDebug() << "Key released: " << event->key();
-    if (event->key() == Qt::Key_Escape) {
-        qDebug() << "Escape";
+        // Delete old music file if it exists
+        QFile::remove(destination);
+
+        // Copy the new music file to the designated folder
+        if (QFile::copy(filePath, destination)) {
+            musicFilePath = destination;
+            musicPathLabel->setText("Music File: " + musicFilePath); // Update music path label
+            saveOptionsToFile();
+        } else {
+            qDebug() << "Failed to copy music file.";
+        }
     }
 }
 
@@ -99,11 +115,9 @@ void MenuWindow::returnToMain() {
 }
 
 void MenuWindow::saveOptionsToFile() {
-    qDebug() << "save options";
     QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/options";
     QDir().mkpath(QFileInfo(filePath).absoluteDir().path());
     QFile file(filePath);
-    qDebug() << "File path:" << file.fileName();
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
         out << "ListOfColors:";
@@ -117,6 +131,10 @@ void MenuWindow::saveOptionsToFile() {
         out << "InvaderColor:" << colorInvaderButton->styleSheet().split(":").last().trimmed() << Qt::endl;
         out << "ShipColor:" << colorShipButton->styleSheet().split(":").last().trimmed() << Qt::endl;
         out << "NumberOfInvaders:" << nbInvaderSpinBox->value() << Qt::endl;
+        if (!musicFilePath.isEmpty()) {
+            out << "MusicPath:" << musicFilePath << Qt::endl;
+            musicPathLabel->setText("Music File: " + musicFilePath); // Update music path label
+        }
         file.close();
     } else {
         qDebug() << "Failed to open option file for writing.";
@@ -152,16 +170,36 @@ void MenuWindow::loadOptionsFromFile() {
         if (line.startsWith("NumberOfInvaders:")) {
             nbInvaderSpinBox->setValue(line.split(":").last().toInt());
         }
+        line = in.readLine();
+        if (line.startsWith("MusicPath:")) {
+            musicFilePath = line.split(":").last().trimmed();
+            musicPathLabel->setText("Music File: " + musicFilePath); // Update music path label
+        }
         file.close();
     } else {
         qDebug() << "Failed to open option file for reading.";
     }
 }
 
-MenuWindow::~MenuWindow() {
-    saveOptionsToFile(); // Save options before destroying the window
+void MenuWindow::keyPressEvent(QKeyEvent *event) {
+    qDebug() << "Key pressed: " << event->key();
+    if (event->key() == Qt::Key_Escape) {
+        saveOptionsToFile();
+        emit MainButtonClicked();
+        qDebug() << "Escape";
+    }
+}
 
-    // Deleting allocated resources
+void MenuWindow::keyReleaseEvent(QKeyEvent *event) {
+    qDebug() << "Key released: " << event->key();
+    if (event->key() == Qt::Key_Escape) {
+        qDebug() << "Escape";
+    }
+}
+
+MenuWindow::~MenuWindow() {
+    saveOptionsToFile();
+
     delete layout;
     delete bulletColorLayout;
     delete bulletColorLabel;
@@ -174,5 +212,6 @@ MenuWindow::~MenuWindow() {
     delete colorShipButton;
     delete nbInvaderLayout;
     delete nbInvaderSpinBox;
+    delete musicLayout;
     delete returnButton;
 }

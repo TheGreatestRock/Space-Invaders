@@ -1,11 +1,12 @@
 Space_Invaders_autogen/timestamp: \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QStandardPaths \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QTextStream \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
@@ -112,6 +113,7 @@ Space_Invaders_autogen/timestamp: \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QColorDialog \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QFileDialog \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget \
@@ -130,6 +132,7 @@ Space_Invaders_autogen/timestamp: \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qcolordialog.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qfiledialog.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \

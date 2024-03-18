@@ -25,4 +25,17 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>MenuWindow</name>
+    <message>
+        <location filename="menuwindow.cpp" line="79"/>
+        <source>Open Music File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="menuwindow.cpp" line="79"/>
+        <source>Music Files (*.mp3 *.wav)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

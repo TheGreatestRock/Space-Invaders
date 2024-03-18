@@ -8,18 +8,18 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QSpinBox>
-#include <QDebug>
-#include <QKeyEvent>
-#include <QColorDialog>
-#include <QVector>
+#include <QFileDialog>
 #include <QStandardPaths>
 #include <QDir>
-#include "colorpickerwindow.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
+#include <QKeyEvent>
 
 class MenuWindow : public QWidget {
     Q_OBJECT
 public:
-    MenuWindow(QWidget *parent = nullptr);
+    explicit MenuWindow(QWidget *parent = nullptr);
     ~MenuWindow();
 
 signals:
@@ -30,7 +30,11 @@ private slots:
     void handleColorInvaderButtonClicked();
     void handleColorShipButtonClicked();
     void handleNbInvaderValueChanged(int value);
+    void handleMusicUpload();
+    void openColorPickerWindow(QPushButton *button);
     void returnToMain();
+    void saveOptionsToFile();
+    void loadOptionsFromFile();
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
@@ -48,13 +52,15 @@ private:
     QLabel *shipColorLabel;
     QPushButton *colorShipButton;
     QHBoxLayout *nbInvaderLayout;
+    QLabel *nbInvaderLabel;
     QSpinBox *nbInvaderSpinBox;
     QPushButton *returnButton;
     QVector<QColor> colors;
+    QHBoxLayout *musicLayout;
+    QPushButton *uploadMusicButton;
+    QLabel *musicPathLabel;
+    QString musicFilePath;
 
-    void openColorPickerWindow(QPushButton *button);
-    void saveOptionsToFile();
-    void loadOptionsFromFile();
 };
 
 #endif // MENUWINDOW_H
