@@ -622,10 +622,14 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/c
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/invader.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/gamewindow.h
  mmc:Q_OBJECT
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDateTime
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFileInfo
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QList
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QStandardPaths
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTextStream
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h
@@ -642,6 +646,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h
@@ -656,6 +661,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qline.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qlocale.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qmap.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qmargins.h
@@ -688,6 +694,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h
@@ -934,11 +941,15 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/mainwindow.h
  mmc:Q_OBJECT
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDateTime
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFileInfo
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QList
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QStandardPaths
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTextStream
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractitemmodel.h
@@ -958,6 +969,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h

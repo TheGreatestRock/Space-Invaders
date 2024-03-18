@@ -1,11 +1,10 @@
-// GameWindow.cpp
+// gamewindow.cpp
 #include "gamewindow.h"
 #include <QPainter>
 #include <QDebug>
 
-
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
-    player(width()/2, (9*height())/10, 20, 5, 5, Qt::white)
+    player(width()/2, (9*height())/10, 20, 5, 5, Qt::white), score(0)
 {
     qDebug() << "GameWindow constructor";
     timer = new QTimer(this);
@@ -98,15 +97,27 @@ void GameWindow::resetGame() {
 void GameWindow::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.fillRect(0, 0, width(), height(), Qt::black); // Background
+
+    // Draw score at the top left
+    painter.setPen(Qt::white);
+    painter.setFont(QFont("Arial", 12));
+    painter.drawText(10, 20, "Score: " + QString::number(score));
+
+    // Draw clock with current time on the right
+    currentTime = QDateTime::currentDateTime().toString("hh:mm:ss");
+    painter.drawText(width() - 100, 20, currentTime);
+
     // Draw player spaceship
     painter.setBrush(player.getColor());
     painter.drawRect(player.getRect());
     painter.drawRect(player.getCannon());
+
     // Draw bullets
     for (Bullet* bullet : bullets) {
         painter.setBrush(bullet->getColor());
         painter.drawRect(bullet->getRect());
     }
+
     // Draw invader
     for (Invader* invader : invader) {
         painter.setBrush(invader->getColor());
@@ -161,48 +172,59 @@ void GameWindow::updateGame() {
             delete bullet;
             bullets.removeAt(i);
             qDebug() << "Bullet deleted";
+            continue; // Continue to the next iteration to avoid accessing removed element
         }
     }
-    // Update player position based on key presses
-    if (leftPressed){
-        if (player.getRect().left() > 0)
-            player.moveLeft();
-        qDebug() << "Player moved left";
-    }
-    if (rightPressed){
-        if (player.getRect().right() < width()- player.getRect().width()/2)
-            player.moveRight();
-        qDebug() << "Player moved right";
-    }
     // Update invader position
-    for (Invader* invader : invader) {
-        invader->move();
+    for (int i = 0; i < invader.size(); ++i) {
+        Invader* inv = invader.at(i);
+        inv->move();
         // Check if invader is out of bounds, change direction if so
-        if (invader->getRect().right() > width() || invader->getRect().left() < 0) {
-            invader->hitWall();
+        if (inv->getRect().right() > width() || inv->getRect().left() < 0) {
+            inv->hitWall();
         }
     }
     //check bullet/invader collision
-    if (!bullets.isEmpty()) {
-        for (int i = 0; i < bullets.size(); ++i) {
-            for (int j = 0; j < invader.size(); ++j) {
-                if (bullets.at(i)->getRect().intersects(invader.at(j)->getRect())) {
-                    delete bullets.at(i);
-                    bullets.removeAt(i);
-                    delete invader.at(j);
-                    invader.removeAt(j);
-                    qDebug() << "Bullet and invader deleted";
-                    for (int k = 0; k < invader.size(); ++k) {
-                        invader[k]->setSpeed(invader[k]->getSpeed()*1.1);
+    for (int i = 0; i < bullets.size(); ++i) {
+        for (int j = 0; j < invader.size(); ++j) {
+            if (i >= bullets.size() || j >= invader.size()) {
+                qDebug() << "Index out of range in bullet/invader collision check";
+                break; // Break out of inner loop
+            }
+            if (bullets.at(i)->getRect().intersects(invader.at(j)->getRect())) {
+                delete bullets.at(i);
+                bullets.removeAt(i);
+                delete invader.at(j);
+                invader.removeAt(j);
+                qDebug() << "Bullet and invader deleted";
+                for (int k = 0; k < invader.size(); ++k) {
+                    if (k >= invader.size()) {
+                        qDebug() << "Index out of range in invader speed increment";
+                        break;
                     }
+                    invader[k]->setSpeed(invader[k]->getSpeed()*1.1);
                 }
+                score += 10;
             }
         }
     }
+
+    // Update player position based on key presses
+    if (leftPressed && player.getRect().left() > 0){
+        player.moveLeft();
+        qDebug() << "Player moved left";
+    }
+    if (rightPressed && player.getRect().right() < width()- player.getRect().width()/2){
+        player.moveRight();
+        qDebug() << "Player moved right";
+    }
+
+    // Check if invader list is empty
     if (invader.isEmpty()) {
         emit WinEvent();
         timer->stop();
     }
+
     // Update the window
     update();
 }

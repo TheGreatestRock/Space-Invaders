@@ -1,4 +1,4 @@
-// GameWindow.h
+// gamewindow.h
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
@@ -6,8 +6,13 @@
 #include <QTimer>
 #include <QKeyEvent>
 #include <QList>
+#include <QColor>
 #include <QStandardPaths>
 #include <QDir>
+#include <QFile>
+#include <QTextStream>
+#include <QFileInfo>
+#include <QDateTime>
 #include "player.h"
 #include "bullet.h"
 #include "invader.h"
@@ -16,38 +21,36 @@ class GameWindow : public QWidget {
     Q_OBJECT
 
 public:
-    GameWindow(QWidget *parent = nullptr);
+    explicit GameWindow(QWidget *parent = nullptr);
     ~GameWindow();
     void resetGame();
-
-signals:
-    void MainButtonClicked();
-    void WinEvent();
+    void start();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
 
-private slots:
-    void updateGame();
-    void start();
-
 private:
-    QColor playerColor;
-    int playerX;
-    int playerY;
-    QColor invaderColor;
-    int numberOfInvaders;
-    QColor bulletColor;
-
-    QTimer *timer;
     Player player;
     QList<Bullet*> bullets;
+    QList<Invader*> invader;
+    QTimer *timer;
     bool leftPressed;
     bool rightPressed;
-    QList<Invader*> invader;
+    QColor playerColor;
+    QColor bulletColor;
+    QColor invaderColor;
+    int numberOfInvaders;
+    int score;
+    QString currentTime;
+
     void loadOptionsFromFile();
+    void updateGame();
+
+signals:
+    void MainButtonClicked();
+    void WinEvent();
 };
 
 #endif // GAMEWINDOW_H
