@@ -1,52 +1,34 @@
 # ninja log v5
-405	459	7325043851406176	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/Space_Invaders_fr_FR.ts	257a4bbb6368cba2
-1493	6488	7325043252301221	CMakeFiles/Space_Invaders.dir/main.cpp.obj	dd36adaf806e7553
-20	388	7325043873080407	Space_Invaders_autogen/timestamp	14ac51bc5be78c65
-405	459	7325043851406176	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
-20	388	7325043873080407	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/timestamp	14ac51bc5be78c65
-20	388	7325043873080407	Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
-20	388	7325043873080407	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
-405	459	7325043851406176	CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
+433	514	7325050232890297	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/Space_Invaders_fr_FR.ts	257a4bbb6368cba2
+519	3289	7325050283606319	CMakeFiles/Space_Invaders.dir/main.cpp.obj	dd36adaf806e7553
+24	419	7325050254705725	Space_Invaders_autogen/timestamp	14ac51bc5be78c65
+433	514	7325050232890297	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
+24	419	7325050254705725	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/timestamp	14ac51bc5be78c65
+24	419	7325050254705725	Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
+24	419	7325050254705725	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
+433	514	7325050232890297	CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
 1502	5186	7325043238811386	CMakeFiles/Space_Invaders.dir/bullet.cpp.obj	3d60efd54fca2d0c
 1518	6121	7325043241974564	CMakeFiles/Space_Invaders.dir/invader.cpp.obj	9dd4a2d226ea4d28
 1513	6122	7325043242865422	CMakeFiles/Space_Invaders.dir/player.cpp.obj	f89c9cb9bfee197a
-1498	7146	7325043258932566	CMakeFiles/Space_Invaders.dir/Space_Invaders_autogen/mocs_compilation.cpp.obj	d99a149a09e8d7c5
-459	3325	7325043902518713	CMakeFiles/Space_Invaders.dir/gamewindow.cpp.obj	b87dc4ea98a88fa1
-1523	6672	7325043254231070	CMakeFiles/Space_Invaders.dir/mainwindow.cpp.obj	1f7b6aa09f95369f
-3325	3658	7325043905792447	Space_Invaders.exe	7d8c3d9e2e0927c4
+514	3615	7325050286873413	CMakeFiles/Space_Invaders.dir/Space_Invaders_autogen/mocs_compilation.cpp.obj	d99a149a09e8d7c5
+406	3232	7325046850073545	CMakeFiles/Space_Invaders.dir/gamewindow.cpp.obj	b87dc4ea98a88fa1
+535	3371	7325050284445442	CMakeFiles/Space_Invaders.dir/mainwindow.cpp.obj	1f7b6aa09f95369f
+3616	3931	7325050289948292	Space_Invaders.exe	7d8c3d9e2e0927c4
 1527	7036	7325043257872138	CMakeFiles/Space_Invaders.dir/colorpickerwindow.cpp.obj	1500b256821fe2d2
 0	24	0	CMakeFiles/clean.additional	baedbe210acaa455
 25	36	0	clean	577b940aee94fbd7
 1536	7680	7325043264329267	CMakeFiles/Space_Invaders.dir/menuwindow.cpp.obj	46be6ed0678a852a
-1532	6123	7325043245612196	CMakeFiles/Space_Invaders.dir/titlewindow.cpp.obj	38166a1d240a5df5
-6	463	7325045384762649	Space_Invaders_autogen/timestamp	14ac51bc5be78c65
-6	463	7325045384762649	Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
-6	463	7325045384762649	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/timestamp	14ac51bc5be78c65
-6	463	7325045384762649	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
-463	494	7325045335815273	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/Space_Invaders_fr_FR.ts	257a4bbb6368cba2
-463	494	7325045335815273	CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
-463	494	7325045335815273	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
-494	2625	7325045406740120	CMakeFiles/Space_Invaders.dir/main.cpp.obj	dd36adaf806e7553
-497	3028	7325045410797569	CMakeFiles/Space_Invaders.dir/Space_Invaders_autogen/mocs_compilation.cpp.obj	d99a149a09e8d7c5
-500	3087	7325045411377118	CMakeFiles/Space_Invaders.dir/gamewindow.cpp.obj	b87dc4ea98a88fa1
-20	1149	7325045538534446	Space_Invaders_autogen/timestamp	14ac51bc5be78c65
-20	1149	7325045538534446	Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
-20	1149	7325045538534446	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/timestamp	14ac51bc5be78c65
-20	1149	7325045538534446	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
-1150	1213	7325045514206436	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/Space_Invaders_fr_FR.ts	257a4bbb6368cba2
-1150	1213	7325045514206436	CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
-1150	1213	7325045514206436	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
-1214	3694	7325045564921305	CMakeFiles/Space_Invaders.dir/main.cpp.obj	dd36adaf806e7553
-1231	3806	7325045566016322	CMakeFiles/Space_Invaders.dir/mainwindow.cpp.obj	1f7b6aa09f95369f
-1220	4086	7325045568810014	CMakeFiles/Space_Invaders.dir/Space_Invaders_autogen/mocs_compilation.cpp.obj	d99a149a09e8d7c5
-1226	4113	7325045569075943	CMakeFiles/Space_Invaders.dir/gamewindow.cpp.obj	b87dc4ea98a88fa1
-4113	4422	7325045572108338	Space_Invaders.exe	7d8c3d9e2e0927c4
-21	294	7325046820605875	Space_Invaders_autogen/timestamp	14ac51bc5be78c65
-21	294	7325046820605875	Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
-21	294	7325046820605875	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/timestamp	14ac51bc5be78c65
-21	294	7325046820605875	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
-309	405	7325046800034302	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/Space_Invaders_fr_FR.ts	257a4bbb6368cba2
-309	405	7325046800034302	CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
-309	405	7325046800034302	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
-406	3232	7325046850073545	CMakeFiles/Space_Invaders.dir/gamewindow.cpp.obj	b87dc4ea98a88fa1
-3233	3553	7325046853206224	Space_Invaders.exe	7d8c3d9e2e0927c4
+551	2927	7325050279986311	CMakeFiles/Space_Invaders.dir/titlewindow.cpp.obj	38166a1d240a5df5
+6	153	7325054118293489	Space_Invaders_autogen/timestamp	14ac51bc5be78c65
+6	153	7325054118293489	Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
+6	153	7325054118293489	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/timestamp	14ac51bc5be78c65
+6	153	7325054118293489	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/mocs_compilation.cpp	14ac51bc5be78c65
+163	193	7325053925077944	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/Space_Invaders_fr_FR.ts	257a4bbb6368cba2
+163	193	7325053925077944	CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
+163	193	7325053925077944	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/CMakeFiles/Space_Invaders_fr_FR.ts_lst_file	257a4bbb6368cba2
+202	289	7325054119648429	CMakeFiles/Space_Invaders.dir/shopwindow.cpp.obj	dec0c3d3e8b983d3
+206	1806	7325054134804270	CMakeFiles/Space_Invaders.dir/titlewindow.cpp.obj	38166a1d240a5df5
+194	2081	7325054137565855	CMakeFiles/Space_Invaders.dir/main.cpp.obj	dd36adaf806e7553
+199	2233	7325054139092325	CMakeFiles/Space_Invaders.dir/mainwindow.cpp.obj	1f7b6aa09f95369f
+196	2504	7325054141776626	CMakeFiles/Space_Invaders.dir/Space_Invaders_autogen/mocs_compilation.cpp.obj	d99a149a09e8d7c5
+2504	2821	7325054144881292	Space_Invaders.exe	f30edeac45ecefb0

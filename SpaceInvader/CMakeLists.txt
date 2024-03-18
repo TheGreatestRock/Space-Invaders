@@ -55,6 +55,7 @@ else()
             menuwindow.h menuwindow.cpp
             titlewindow.h titlewindow.cpp
             mainwindow.ui
+            shopwindow.h shopwindow.cpp
 
 
         )

@@ -226,6 +226,8 @@ Space_Invaders_autogen/timestamp: \
 	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/menuwindow.h \
 	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/player.cpp \
 	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/player.h \
+	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/shopwindow.cpp \
+	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/shopwindow.h \
 	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/titlewindow.cpp \
 	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/titlewindow.h \
 	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
@@ -433,4 +435,5 @@ Space_Invaders_autogen/timestamp: \
 	C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
 	C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
 	C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h \
+	C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/titlewindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

@@ -227,8 +227,11 @@ Space_Invaders_autogen/timestamp: \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/menuwindow.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/player.cpp \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/player.h \
+  C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/shopwindow.cpp \
+  C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/shopwindow.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/titlewindow.cpp \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/titlewindow.h \
+  C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/titlewindow.ui \
   .qtc/package-manager/auto-setup.cmake \
   CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
   CMakeFiles/3.27.7/CMakeRCCompiler.cmake \

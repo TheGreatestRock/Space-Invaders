@@ -1,31 +1,28 @@
 #include "titlewindow.h"
+#include "ui_titlewindow.h"
 
 TitleWindow::TitleWindow(QWidget *parent)
-    : QWidget(parent), gameWon(false)
+    : QMainWindow(parent), gameWon(false)
 {
     setStyleSheet("background-color: lightblue;");
 
-    playButton = new QPushButton("Play", this);
-    menuButton = new QPushButton("Menu", this);
-    exitButton = new QPushButton("Exit", this);
+    // Load the UI file
+    ui.setupUi(this);
 
-    playButton->move(20, 20);
-    menuButton->move(120, 20);
-    exitButton->move(220, 20);
-
-    connect(playButton, &QPushButton::clicked, this, &TitleWindow::handlePlayButtonClicked);
-    connect(menuButton, &QPushButton::clicked, this, &TitleWindow::handleMenuButtonClicked);
-    connect(exitButton, &QPushButton::clicked, this, &TitleWindow::handleExitButtonClicked);
+    // Connect button signals to slots
+    connect(ui.playButton, &QPushButton::clicked, this, &TitleWindow::handlePlayButtonClicked);
+    connect(ui.menuButton, &QPushButton::clicked, this, &TitleWindow::handleMenuButtonClicked);
+    connect(ui.exitButton, &QPushButton::clicked, this, &TitleWindow::handleExitButtonClicked);
 }
 
 void TitleWindow::setGameWon(bool won)
 {
     gameWon = won;
     if (gameWon) {
-        playButton->setText("Play again");
+        ui.playButton->setText("Play again");
     }
     else {
-        playButton->setText("Play");
+        ui.playButton->setText("Play");
     }
 }
 

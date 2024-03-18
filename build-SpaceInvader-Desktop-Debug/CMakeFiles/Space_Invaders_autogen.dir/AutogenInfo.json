@@ -119,6 +119,12 @@
 			null
 		],
 		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/shopwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_shopwindow.cpp",
+			null
+		],
+		[
 			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/titlewindow.h",
 			"MU",
 			"EWIEGA46WW/moc_titlewindow.cpp",
@@ -213,6 +219,11 @@
 		],
 		[
 			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/player.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/shopwindow.cpp",
 			"MU",
 			null
 		],

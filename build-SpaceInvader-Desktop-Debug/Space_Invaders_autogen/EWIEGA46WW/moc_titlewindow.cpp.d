@@ -79,11 +79,13 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
-  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
