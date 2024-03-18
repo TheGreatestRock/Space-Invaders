@@ -48,7 +48,7 @@ else()
             bullet.h bullet.cpp
             invader.h invader.cpp
             mainwindow.h mainwindow.cpp
-            menuwindow.h menuwindow.cpp
+
             mainwindow.ui
             menuwindow.ui
 
