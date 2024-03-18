@@ -16,11 +16,12 @@ public:
     int getDirection() const;
     void setPos(int x, int y);
     void hitWall();
-    void setSpeed(int speed);
+    void setSpeed(double speed);
+    int getSpeed();
 private:
     QRect rect;
     QColor color;
-    int speed;
+    double speed;
     int direction;
 };
 

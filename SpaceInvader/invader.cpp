@@ -21,12 +21,16 @@ void Invader::move() {
 }
 
 void Invader::hitWall() {
-    rect.moveTop(rect.top() + 20);
+    rect.moveTop(rect.top() + 15);
     direction = -direction;
 }
 
-void Invader::setSpeed(int speed) {
+void Invader::setSpeed(double speed) {
     this->speed = speed;
+}
+
+int Invader::getSpeed() {
+    return speed;
 }
 
 void Invader::setDirection(int direction) {

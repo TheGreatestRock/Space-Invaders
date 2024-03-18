@@ -192,6 +192,9 @@ void GameWindow::updateGame() {
                     delete invader.at(j);
                     invader.removeAt(j);
                     qDebug() << "Bullet and invader deleted";
+                    for (int k = 0; k < invader.size(); ++k) {
+                        invader[k]->setSpeed(invader[k]->getSpeed()*1.1);
+                    }
                 }
             }
         }
