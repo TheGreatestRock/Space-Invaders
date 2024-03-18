@@ -2,13 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QPainter>
+#include "titlewindow.h"
 #include "gamewindow.h"
 #include "menuwindow.h"
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
@@ -18,23 +14,23 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-protected:
-    void paintEvent(QPaintEvent *event) override;
+private:
+    TitleWindow *titleWindow;
+    GameWindow *gameWindow;
+    MenuWindow *menuWindow;
+    bool gameWon;
 
-private slots:
+    void createSaveFile();
     void goToMenu();
     void goToGame();
     void goToMain();
     void goToMainWin();
+
+private slots:
     void handlePlayButtonClicked();
     void handleOptionsButtonClicked();
     void handleExitButtonClicked();
-
-private:
-    Ui::MainWindow *ui;
-    GameWindow *gameWindow;
-    MenuWindow *menuWindow;
-    bool gameWon;
+    void handleMainButtonClicked();
+    void handleWin();
 };
-
 #endif // MAINWINDOW_H

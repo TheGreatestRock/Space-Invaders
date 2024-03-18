@@ -105,6 +105,14 @@ build CMakeFiles/Space_Invaders.dir/mainwindow.cpp.obj: CXX_COMPILER__Space_Inva
   OBJECT_DIR = CMakeFiles\Space_Invaders.dir
   OBJECT_FILE_DIR = CMakeFiles\Space_Invaders.dir
 
+build CMakeFiles/Space_Invaders.dir/colorpickerwindow.cpp.obj: CXX_COMPILER__Space_Invaders_unscanned_Debug C$:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space$ Invader/SpaceInvader/colorpickerwindow.cpp || cmake_object_order_depends_target_Space_Invaders
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles\Space_Invaders.dir\colorpickerwindow.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/include" -isystem C:/Qt/5.15.2/mingw81_64/include -isystem C:/Qt/5.15.2/mingw81_64/include/QtWidgets -isystem C:/Qt/5.15.2/mingw81_64/include/QtGui -isystem C:/Qt/5.15.2/mingw81_64/include/QtANGLE -isystem C:/Qt/5.15.2/mingw81_64/include/QtCore -isystem C:/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\Space_Invaders.dir
+  OBJECT_FILE_DIR = CMakeFiles\Space_Invaders.dir
+
 build CMakeFiles/Space_Invaders.dir/menuwindow.cpp.obj: CXX_COMPILER__Space_Invaders_unscanned_Debug C$:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space$ Invader/SpaceInvader/menuwindow.cpp || cmake_object_order_depends_target_Space_Invaders
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles\Space_Invaders.dir\menuwindow.cpp.obj.d
@@ -113,9 +121,9 @@ build CMakeFiles/Space_Invaders.dir/menuwindow.cpp.obj: CXX_COMPILER__Space_Inva
   OBJECT_DIR = CMakeFiles\Space_Invaders.dir
   OBJECT_FILE_DIR = CMakeFiles\Space_Invaders.dir
 
-build CMakeFiles/Space_Invaders.dir/colorpickerwindow.cpp.obj: CXX_COMPILER__Space_Invaders_unscanned_Debug C$:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space$ Invader/SpaceInvader/colorpickerwindow.cpp || cmake_object_order_depends_target_Space_Invaders
+build CMakeFiles/Space_Invaders.dir/titlewindow.cpp.obj: CXX_COMPILER__Space_Invaders_unscanned_Debug C$:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space$ Invader/SpaceInvader/titlewindow.cpp || cmake_object_order_depends_target_Space_Invaders
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles\Space_Invaders.dir\colorpickerwindow.cpp.obj.d
+  DEP_FILE = CMakeFiles\Space_Invaders.dir\titlewindow.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -I"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/include" -isystem C:/Qt/5.15.2/mingw81_64/include -isystem C:/Qt/5.15.2/mingw81_64/include/QtWidgets -isystem C:/Qt/5.15.2/mingw81_64/include/QtGui -isystem C:/Qt/5.15.2/mingw81_64/include/QtANGLE -isystem C:/Qt/5.15.2/mingw81_64/include/QtCore -isystem C:/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++
   OBJECT_DIR = CMakeFiles\Space_Invaders.dir
@@ -129,7 +137,7 @@ build CMakeFiles/Space_Invaders.dir/colorpickerwindow.cpp.obj: CXX_COMPILER__Spa
 #############################################
 # Link the executable Space_Invaders.exe
 
-build Space_Invaders.exe: CXX_EXECUTABLE_LINKER__Space_Invaders_Debug CMakeFiles/Space_Invaders.dir/Space_Invaders_autogen/mocs_compilation.cpp.obj CMakeFiles/Space_Invaders.dir/main.cpp.obj CMakeFiles/Space_Invaders.dir/gamewindow.cpp.obj CMakeFiles/Space_Invaders.dir/player.cpp.obj CMakeFiles/Space_Invaders.dir/bullet.cpp.obj CMakeFiles/Space_Invaders.dir/invader.cpp.obj CMakeFiles/Space_Invaders.dir/mainwindow.cpp.obj CMakeFiles/Space_Invaders.dir/menuwindow.cpp.obj CMakeFiles/Space_Invaders.dir/colorpickerwindow.cpp.obj | C$:/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a C$:/Qt/5.15.2/mingw81_64/lib/libQt5Gui.a C$:/Qt/5.15.2/mingw81_64/lib/libQt5Core.a C$:/Qt/5.15.2/mingw81_64/lib/libqtmain.a || Space_Invaders_autogen Space_Invaders_autogen_timestamp_deps
+build Space_Invaders.exe: CXX_EXECUTABLE_LINKER__Space_Invaders_Debug CMakeFiles/Space_Invaders.dir/Space_Invaders_autogen/mocs_compilation.cpp.obj CMakeFiles/Space_Invaders.dir/main.cpp.obj CMakeFiles/Space_Invaders.dir/gamewindow.cpp.obj CMakeFiles/Space_Invaders.dir/player.cpp.obj CMakeFiles/Space_Invaders.dir/bullet.cpp.obj CMakeFiles/Space_Invaders.dir/invader.cpp.obj CMakeFiles/Space_Invaders.dir/mainwindow.cpp.obj CMakeFiles/Space_Invaders.dir/colorpickerwindow.cpp.obj CMakeFiles/Space_Invaders.dir/menuwindow.cpp.obj CMakeFiles/Space_Invaders.dir/titlewindow.cpp.obj | C$:/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a C$:/Qt/5.15.2/mingw81_64/lib/libQt5Gui.a C$:/Qt/5.15.2/mingw81_64/lib/libQt5Core.a C$:/Qt/5.15.2/mingw81_64/lib/libqtmain.a || Space_Invaders_autogen Space_Invaders_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a  C:/Qt/5.15.2/mingw81_64/lib/libQt5Gui.a  C:/Qt/5.15.2/mingw81_64/lib/libQt5Core.a  C:/Qt/5.15.2/mingw81_64/lib/libqtmain.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -216,7 +224,7 @@ build Space_Invaders_autogen_timestamp_deps: phony CMakeFiles/Space_Invaders_aut
 #############################################
 # Utility command for Space_Invaders_autogen
 
-build Space_Invaders_autogen: phony CMakeFiles/Space_Invaders_autogen Space_Invaders_autogen/include/ui_MainWindow.h Space_Invaders_autogen/include/ui_menuwindow.h Space_Invaders_autogen/timestamp Space_Invaders_autogen/mocs_compilation.cpp Space_Invaders_autogen_timestamp_deps
+build Space_Invaders_autogen: phony CMakeFiles/Space_Invaders_autogen Space_Invaders_autogen/include/ui_titlewindow.h Space_Invaders_autogen/include/ui_mainwindow.h Space_Invaders_autogen/timestamp Space_Invaders_autogen/mocs_compilation.cpp Space_Invaders_autogen_timestamp_deps
 
 
 #############################################
@@ -247,7 +255,7 @@ build CMakeFiles/Space_Invaders_autogen_timestamp_deps | ${cmake_ninja_workdir}C
 #############################################
 # Phony custom command for CMakeFiles\Space_Invaders_autogen
 
-build CMakeFiles/Space_Invaders_autogen Space_Invaders_autogen/include/ui_MainWindow.h Space_Invaders_autogen/include/ui_menuwindow.h | ${cmake_ninja_workdir}CMakeFiles/Space_Invaders_autogen ${cmake_ninja_workdir}Space_Invaders_autogen/include/ui_MainWindow.h ${cmake_ninja_workdir}Space_Invaders_autogen/include/ui_menuwindow.h: phony Space_Invaders_autogen/timestamp || Space_Invaders_autogen_timestamp_deps
+build CMakeFiles/Space_Invaders_autogen Space_Invaders_autogen/include/ui_titlewindow.h Space_Invaders_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/Space_Invaders_autogen ${cmake_ninja_workdir}Space_Invaders_autogen/include/ui_titlewindow.h ${cmake_ninja_workdir}Space_Invaders_autogen/include/ui_mainwindow.h: phony Space_Invaders_autogen/timestamp || Space_Invaders_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

@@ -74,7 +74,57 @@
 	"CMAKE_SOURCE_DIR" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader",
 	"DEP_FILE" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "Space_Invaders_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/bullet.h",
+			"MU",
+			"EWIEGA46WW/moc_bullet.cpp",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/colorpickerwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_colorpickerwindow.cpp",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/gamewindow.h",
+			"MU",
+			"EWIEGA46WW/moc_gamewindow.cpp",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/invader.h",
+			"MU",
+			"EWIEGA46WW/moc_invader.cpp",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/menuwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_menuwindow.cpp",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/player.h",
+			"MU",
+			"EWIEGA46WW/moc_player.cpp",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/titlewindow.h",
+			"MU",
+			"EWIEGA46WW/moc_titlewindow.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/include",
 	"MOC_COMPILATION_FILE" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/mocs_compilation.cpp",
@@ -124,7 +174,54 @@
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 15,
 	"SETTINGS_FILE" : "C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug/CMakeFiles/Space_Invaders_autogen.dir/AutogenUsed.txt",
-	"SOURCES" : [],
+	"SOURCES" : 
+	[
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/bullet.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/colorpickerwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/gamewindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/invader.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/menuwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/player.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/titlewindow.cpp",
+			"MU",
+			null
+		]
+	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : [],

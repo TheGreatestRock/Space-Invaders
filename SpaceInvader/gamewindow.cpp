@@ -5,7 +5,7 @@
 
 
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
-    player(window()->height()/1.5, window()->width()/1.5, 20, 5, 5, Qt::white)
+    player(width()/2, (9*height())/10, 20, 5, 5, Qt::white)
 {
     qDebug() << "GameWindow constructor";
     timer = new QTimer(this);
@@ -15,19 +15,85 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
     leftPressed = false;
     rightPressed = false;
 
-    // Initialize the invader list
-    for (int i = 0; i < 2; ++i) {
-        Invader* newInvader = new Invader(0, 0, 10, 5, 5, Qt::green);
-        invader.append(newInvader);
+    resetGame();
+}
+
+void GameWindow::loadOptionsFromFile() {
+    QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/options";
+    QDir().mkpath(QFileInfo(filePath).absoluteDir().path());
+    QFile file(filePath);
+    if (file.open(QIODevice::ReadOnly)) {
+        QTextStream in(&file);
+        while (!in.atEnd()) {
+            QString line = in.readLine();
+            QStringList fields = line.split(":");
+            if (fields.length() == 2) {
+                QString key = fields[0].trimmed();
+                QString value = fields[1].trimmed();
+                if (key == "ShipColor") {
+                    playerColor = QColor(value);
+                    qDebug() << "ShipColor: " << value << " converted to: " << playerColor;
+                }
+                else if (key == "BulletColor") {
+                    bulletColor = QColor(value);
+                    qDebug() << "BulletColor: " << value << " converted to: " << bulletColor;
+                }
+                else if (key == "InvaderColor") {
+                    invaderColor = QColor(value);
+                    qDebug() << "InvaderColor: " << value << " converted to: " << invaderColor;
+                }
+                else if (key == "NumberOfInvaders") {
+                    numberOfInvaders = value.toInt();
+                    qDebug() << "NumberOfInvaders: " << value << " converted to: " << numberOfInvaders;
+                }
+            }
+        }
+        file.close();
+    }
+    else {
+        qDebug() << "Could not open file";
     }
 }
 
-
-GameWindow::~GameWindow() {
-    // Clean up bullets
+void GameWindow::resetGame() {
+    loadOptionsFromFile();
+    // Clear bullets
     qDeleteAll(bullets);
     bullets.clear();
+
+    // Clear invaders
+    qDeleteAll(invader);
+    invader.clear();
+
+    // Reinitialize player position
+    player.setPos(width()/2, (9 * height()) / 10);
+    player.setColor(playerColor);
+
+    // Reinitialize invader positions
+    const int invaderSpacing = (width() - (10 * 10)) / (10 + 1);
+
+    for (int i = 0; i < numberOfInvaders; ++i) {
+        int row = i / 10; // Calculate the row
+        int col = i % 10; // Calculate the column within the row
+
+        int x = invaderSpacing + col * (10 + invaderSpacing); // Calculate x position
+        int y = 50 + row * 20; // Calculate y position
+
+        Invader* newInvader = new Invader(x, y, 10, 5, 5, invaderColor);
+        invader.append(newInvader);
+    }
+
+    // Restart the game timer if it's not active
+    if (!timer->isActive())
+        timer->start(20);
+
+    // Reset key presses
+    leftPressed = false;
+    rightPressed = false;
+
+    update();
 }
+
 
 void GameWindow::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
@@ -61,11 +127,11 @@ void GameWindow::keyPressEvent(QKeyEvent *event) {
     else if (event->key() == Qt::Key_Space){
         qDebug() << "Space";
         // Create a new bullet and add it to the list
-        Bullet* newBullet = new Bullet(player.getRect().x() + 10, player.getRect().y(), 5, 5, 5, Qt::white);
+        Bullet* newBullet = new Bullet(player.getRect().x() + 10, player.getRect().y(), 5, 5, 5, bulletColor);
         bullets.append(newBullet);
     }
     if (event->key() == Qt::Key_Escape) {
-        emit goToMain();
+        emit MainButtonClicked();
         qDebug() << "Escape";
     }
 }
@@ -131,7 +197,7 @@ void GameWindow::updateGame() {
         }
     }
     if (invader.isEmpty()) {
-        emit goToMainWin();
+        emit WinEvent();
         timer->stop();
     }
     // Update the window
@@ -139,19 +205,16 @@ void GameWindow::updateGame() {
 }
 
 void GameWindow::start() {
-    // Set initial player position
-    player.setPos(200, 250);
+    resetGame();
+    update();
+}
 
-    // Set initial invader position (if necessary)
-    for (int i = 0; i < invader.size(); ++i) {
-        invader.at(i)->setPos(50 + 50 * i, 50 + 20 * i);
+GameWindow::~GameWindow() {
+    delete timer;
+    for (Bullet* bullet : bullets) {
+        delete bullet;
     }
-
-    // Start the game timer
-    if (!timer->isActive())
-        timer->start(20); // Update game every 20 milliseconds
-
-    // Reset key presses
-    leftPressed = false;
-    rightPressed = false;
+    for (Invader* invader : invader) {
+        delete invader;
+    }
 }

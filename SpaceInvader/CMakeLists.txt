@@ -49,10 +49,14 @@ else()
             invader.h invader.cpp
             mainwindow.h mainwindow.cpp
 
-            mainwindow.ui
-            menuwindow.ui
+            titlewindow.ui
 
             colorpickerwindow.h colorpickerwindow.cpp
+            menuwindow.h menuwindow.cpp
+            titlewindow.h titlewindow.cpp
+            mainwindow.ui
+
+
         )
     endif()
 

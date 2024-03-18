@@ -132,7 +132,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/SpaceInvader
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Space_Invaders
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -319,15 +319,6 @@ Qt5Widgets_DIR:PATH=C:/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Widgets
 Qt5_DIR:PATH=C:/Qt/5.15.2/mingw81_64/lib/cmake/Qt5
 
 //Value Computed by CMake
-SpaceInvader_BINARY_DIR:STATIC=C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug
-
-//Value Computed by CMake
-SpaceInvader_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-SpaceInvader_SOURCE_DIR:STATIC=C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader
-
-//Value Computed by CMake
 Space_Invaders_BINARY_DIR:STATIC=C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/build-SpaceInvader-Desktop-Debug
 
 //Value Computed by CMake
@@ -512,5 +503,5 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/SpaceInvader
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/Space_Invaders
 

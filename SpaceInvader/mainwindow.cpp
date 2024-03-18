@@ -1,62 +1,73 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <QDebug>
-#include <QKeyEvent>
+#include "gamewindow.h"
+#include "menuwindow.h"
+#include "titlewindow.h"
 #include <QApplication>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
-    ui(new Ui::MainWindow),
+    titleWindow(new TitleWindow()),
+    gameWindow(new GameWindow()),
+    menuWindow(new MenuWindow()),
     gameWon(false)
 {
-    ui->setupUi(this);
+    createSaveFile();
     setWindowTitle("Main Window");
     setStyleSheet("background-color: lightblue;");
-    gameWindow = new GameWindow();
-    menuWindow = new MenuWindow();
-    connect(ui->playButton, &QPushButton::clicked, this, &MainWindow::handlePlayButtonClicked);
-    connect(ui->menuButton, &QPushButton::clicked, this, &MainWindow::handleOptionsButtonClicked);
-    connect(ui->exitButton, &QPushButton::clicked, this, &MainWindow::handleExitButtonClicked);
-    connect(menuWindow, &MenuWindow::goToMain, this, &MainWindow::goToMain);
-    connect(gameWindow, &GameWindow::goToMain, this, &MainWindow::goToMain);
-    connect(gameWindow, &GameWindow::goToMainWin, this, &MainWindow::goToMainWin);
-}
 
-void MainWindow::paintEvent(QPaintEvent *event)
-{
-    QMainWindow::paintEvent(event);
-    if (gameWon) {
-        QPainter painter(this);
-        painter.setPen(QColor(255, 255, 255));
-        painter.setFont(QFont("Arial", 30));
-        painter.drawText(100, 100, "You Win!");
-    }
+    setMinimumSize(800, 600);
+
+    connect(titleWindow, &TitleWindow::playButtonClicked, this, &MainWindow::handlePlayButtonClicked);
+    connect(titleWindow, &TitleWindow::menuButtonClicked, this, &MainWindow::handleOptionsButtonClicked);
+    connect(titleWindow, &TitleWindow::exitButtonClicked, this, &MainWindow::handleExitButtonClicked);
+    connect(gameWindow, &GameWindow::MainButtonClicked, this, &MainWindow::handleMainButtonClicked);
+    connect(gameWindow, &GameWindow::WinEvent, this, &MainWindow::handleWin);
+    connect(menuWindow, &MenuWindow::MainButtonClicked, this, &MainWindow::handleMainButtonClicked);
+
+    // Initially, only the title window should be shown
+    QVBoxLayout *layout = new QVBoxLayout;
+    layout->addWidget(titleWindow);
+    layout->addWidget(gameWindow);
+    layout->addWidget(menuWindow);
+
+    QWidget *centralWidget = new QWidget;
+    centralWidget->setLayout(layout);
+    setCentralWidget(centralWidget);
+
+    gameWindow->hide();
+    menuWindow->hide();
 }
 
 void MainWindow::goToMenu()
 {
-    gameWon = false;
+    gameWindow->hide();
+    titleWindow->hide();
+    menuWindow->show();
     menuWindow->setFocus();
-    menuWindow->setFocusPolicy(Qt::StrongFocus);
-    setCentralWidget(menuWindow);
 }
 
 void MainWindow::goToGame()
 {
+    gameWindow->resetGame();
+    titleWindow->hide();
+    menuWindow->hide();
+    gameWindow->show();
     gameWindow->setFocus();
-    gameWindow->setFocusPolicy(Qt::StrongFocus);
-    setCentralWidget(gameWindow);
 }
 
 void MainWindow::goToMain()
 {
-    setCentralWidget(ui->centralwidget);
+    gameWindow->hide();
+    menuWindow->hide();
+    titleWindow->show();
+    titleWindow->setFocus();
 }
 
 void MainWindow::goToMainWin()
 {
     gameWon = true;
-    update();
+    titleWindow->setGameWon(true);
     goToMain();
 }
 
@@ -75,9 +86,41 @@ void MainWindow::handleExitButtonClicked()
     QApplication::quit();
 }
 
+void MainWindow::handleMainButtonClicked()
+{
+    goToMain();
+}
+
+void MainWindow::handleWin()
+{
+    goToMainWin();
+}
+
 MainWindow::~MainWindow()
 {
-    delete ui;
-    delete menuWindow;
+    delete titleWindow;
     delete gameWindow;
+    delete menuWindow;
+}
+
+void MainWindow::createSaveFile(){
+    QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/options";
+    QDir().mkpath(QFileInfo(filePath).absoluteDir().path());
+    QFile file(filePath);
+    if (file.size() == 0) {
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            QTextStream out(&file);
+            out << "ListOfColors:" << Qt::endl;
+            out << "BulletColor:#FFFFFF"  << Qt::endl;
+            out << "InvaderColor:#00FF00" << Qt::endl;
+            out << "ShipColor:#FFFFFF" << Qt::endl;
+            out << "NumberOfInvaders:10" << Qt::endl;
+            file.close();
+            qDebug() << "Base save file created.";
+        } else {
+            qDebug() << "Failed to create base save file.";
+        }
+    } else {
+        qDebug() << "Save file already exists.";
+    }
 }
