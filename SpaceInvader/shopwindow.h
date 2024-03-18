@@ -1,10 +1,18 @@
+// shopwindow.h
 #ifndef SHOPWINDOW_H
 #define SHOPWINDOW_H
 
-class shopwindow
+#include <QDialog>
+
+class ShopWindow : public QDialog
 {
+    Q_OBJECT
 public:
-    shopwindow();
+    explicit ShopWindow(QWidget *parent = nullptr);
+
+signals:
+
+public slots:
 };
 
 #endif // SHOPWINDOW_H

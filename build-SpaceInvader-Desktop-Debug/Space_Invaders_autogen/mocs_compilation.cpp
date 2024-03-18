@@ -3,4 +3,5 @@
 #include "EWIEGA46WW/moc_gamewindow.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
 #include "EWIEGA46WW/moc_menuwindow.cpp"
+#include "EWIEGA46WW/moc_shopwindow.cpp"
 #include "EWIEGA46WW/moc_titlewindow.cpp"

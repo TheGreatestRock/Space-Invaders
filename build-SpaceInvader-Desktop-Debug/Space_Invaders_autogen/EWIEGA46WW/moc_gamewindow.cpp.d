@@ -89,6 +89,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qfont.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontinfo.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qimage.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h \
@@ -107,7 +108,12 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -115,6 +121,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/bullet.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/invader.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/player.h \
+  C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/shopwindow.h \
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \
   C:/msys64/ucrt64/include/_mingw_off_t.h \

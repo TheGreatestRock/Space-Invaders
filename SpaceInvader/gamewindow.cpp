@@ -4,7 +4,7 @@
 #include <QDebug>
 
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
-    player(width()/2, (9*height())/10, 20, 5, 5, Qt::white), score(0)
+    player(width()/2, (9*height())/10, 20, 5, 5, Qt::white), score(0), shopWindow(nullptr)
 {
     qDebug() << "GameWindow constructor";
     timer = new QTimer(this);
@@ -13,7 +13,12 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
     qDebug() << timer->isActive();
     leftPressed = false;
     rightPressed = false;
-
+    shopWindow = new ShopWindow(this);
+    cogButton = new QPushButton(this);
+    cogButton->setFixedSize(30, 30);
+    cogButton->move(width()*0.05, height()*1.1);
+    cogButton->setStyleSheet("background-color: gold;");
+    connect(cogButton, &QPushButton::clicked, this, &GameWindow::handleCogButtonClicked);
     resetGame();
 }
 
@@ -241,5 +246,12 @@ GameWindow::~GameWindow() {
     }
     for (Invader* invader : invader) {
         delete invader;
+    }
+}
+
+void GameWindow::handleCogButtonClicked() {
+    // Show the shop window when cog button is clicked
+    if (shopWindow) {
+        shopWindow->show();
     }
 }

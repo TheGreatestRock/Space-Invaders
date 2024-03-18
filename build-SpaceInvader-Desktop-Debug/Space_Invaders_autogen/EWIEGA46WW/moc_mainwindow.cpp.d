@@ -162,6 +162,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/invader.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/menuwindow.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/player.h \
+  C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/shopwindow.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/titlewindow.h \
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \

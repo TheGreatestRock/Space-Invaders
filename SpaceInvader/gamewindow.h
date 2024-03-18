@@ -11,11 +11,14 @@
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
+#include <QPushButton>
 #include <QFileInfo>
 #include <QDateTime>
 #include "player.h"
 #include "bullet.h"
 #include "invader.h"
+#include "shopwindow.h"
+
 
 class GameWindow : public QWidget {
     Q_OBJECT
@@ -25,6 +28,9 @@ public:
     ~GameWindow();
     void resetGame();
     void start();
+
+public slots:
+    void handleCogButtonClicked();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -47,6 +53,8 @@ private:
 
     void loadOptionsFromFile();
     void updateGame();
+    ShopWindow *shopWindow;
+    QPushButton *cogButton;
 
 signals:
     void MainButtonClicked();
