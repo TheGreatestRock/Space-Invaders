@@ -43,6 +43,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     connect(returnButton, &QPushButton::clicked, this, &MenuWindow::returnToMain);
 
 
+
     layout->addLayout(bulletColorLayout);
     layout->addLayout(invaderColorLayout);
     layout->addLayout(shipColorLayout);
