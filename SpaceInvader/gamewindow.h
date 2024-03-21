@@ -17,7 +17,9 @@
 #include "player.h"
 #include "bullet.h"
 #include "invader.h"
-#include "shopwindow.h"
+#include "winwindow.h"
+#include <QMessageBox>
+
 
 
 class GameWindow : public QWidget {
@@ -28,9 +30,6 @@ public:
     ~GameWindow();
     void resetGame();
     void start();
-
-public slots:
-    void handleCogButtonClicked();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -50,15 +49,13 @@ private:
     int numberOfInvaders;
     int score;
     QString currentTime;
-
+    WinWindow *winWindow;
     void loadOptionsFromFile();
     void updateGame();
-    ShopWindow *shopWindow;
-    QPushButton *cogButton;
 
 signals:
     void MainButtonClicked();
-    void WinEvent();
+    void WinEvent(int score);
 };
 
 #endif // GAMEWINDOW_H

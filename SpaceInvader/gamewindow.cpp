@@ -4,21 +4,17 @@
 #include <QDebug>
 
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
-    player(width()/2, (9*height())/10, 20, 5, 5, Qt::white), score(0), shopWindow(nullptr)
+    player(width()/2, (9*height())/10, 20, 5, 5, Qt::white), score(0)
 {
     qDebug() << "GameWindow constructor";
     timer = new QTimer(this);
+    winWindow = new WinWindow();
     connect(timer, &QTimer::timeout, this, &GameWindow::updateGame);
+    connect(this, &GameWindow::WinEvent, winWindow, &WinWindow::setScore);
     timer->start(20); // Update game every 20 milliseconds
     qDebug() << timer->isActive();
     leftPressed = false;
     rightPressed = false;
-    shopWindow = new ShopWindow(this);
-    cogButton = new QPushButton(this);
-    cogButton->setFixedSize(30, 30);
-    cogButton->move(width()*0.05, height()*1.1);
-    cogButton->setStyleSheet("background-color: gold;");
-    connect(cogButton, &QPushButton::clicked, this, &GameWindow::handleCogButtonClicked);
     resetGame();
 }
 
@@ -94,6 +90,8 @@ void GameWindow::resetGame() {
     // Reset key presses
     leftPressed = false;
     rightPressed = false;
+
+    score = 0;
 
     update();
 }
@@ -226,8 +224,9 @@ void GameWindow::updateGame() {
 
     // Check if invader list is empty
     if (invader.isEmpty()) {
-        emit WinEvent();
+        emit WinEvent(score);
         timer->stop();
+        winWindow->show();
     }
 
     // Update the window
@@ -246,12 +245,5 @@ GameWindow::~GameWindow() {
     }
     for (Invader* invader : invader) {
         delete invader;
-    }
-}
-
-void GameWindow::handleCogButtonClicked() {
-    // Show the shop window when cog button is clicked
-    if (shopWindow) {
-        shopWindow->show();
     }
 }

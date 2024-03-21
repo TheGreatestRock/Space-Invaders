@@ -10,6 +10,9 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     bulletColorLayout->addWidget(bulletColorLabel);
     bulletColorLayout->addWidget(colorBulletButton);
 
+    shipEditorButton = new QPushButton("Ship Editor", this);
+    invaderEditorButton = new QPushButton("Invader Editor", this);
+    bulletEditorButton = new QPushButton("Bullet Editor", this);
     invaderColorLayout = new QHBoxLayout();
     invaderColorLabel = new QLabel("Invader Color:", this);
     colorInvaderButton = new QPushButton("Change color", this);
@@ -30,6 +33,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     nbInvaderLayout->addWidget(nbInvaderLabel);
     nbInvaderLayout->addWidget(nbInvaderSpinBox);
 
+
     returnButton = new QPushButton("Return to Main", this);
 
     connect(colorBulletButton, &QPushButton::clicked, this, &MenuWindow::handleColorBulletButtonClicked);
@@ -37,6 +41,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     connect(colorShipButton, &QPushButton::clicked, this, &MenuWindow::handleColorShipButtonClicked);
     connect(nbInvaderSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MenuWindow::handleNbInvaderValueChanged);
     connect(returnButton, &QPushButton::clicked, this, &MenuWindow::returnToMain);
+
 
     layout->addLayout(bulletColorLayout);
     layout->addLayout(invaderColorLayout);

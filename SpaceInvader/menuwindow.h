@@ -15,6 +15,7 @@
 #include <QStandardPaths>
 #include <QDir>
 #include "colorpickerwindow.h"
+#include "editorwindow.h"
 
 class MenuWindow : public QWidget {
     Q_OBJECT
@@ -51,7 +52,9 @@ private:
     QSpinBox *nbInvaderSpinBox;
     QPushButton *returnButton;
     QVector<QColor> colors;
-
+    QPushButton *shipEditorButton;
+    QPushButton *invaderEditorButton;
+    QPushButton *bulletEditorButton;
     void openColorPickerWindow(QPushButton *button);
     void saveOptionsToFile();
     void loadOptionsFromFile();
