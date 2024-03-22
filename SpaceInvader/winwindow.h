@@ -19,7 +19,11 @@ public slots:
 private:
     QLabel *winLabel;
     QLabel *scoreLabel;
+    QLabel *highScoreLabel;
     QPushButton *copyButton;
+    void saveScore(int score);
+    int getHighscore();
+    void saveScoreToFile(int score);
 };
 
 #endif // WINWINDOW_H

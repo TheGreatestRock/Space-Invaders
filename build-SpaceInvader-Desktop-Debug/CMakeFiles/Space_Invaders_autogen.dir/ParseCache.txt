@@ -329,6 +329,8 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/c
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/invader.h
+C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/winwindow.cpp
+C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/player.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/bullet.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/editorwindow.h
  mmc:Q_OBJECT
@@ -618,8 +620,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/e
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
-C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/winwindow.cpp
-C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/player.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/gamewindow.h
  mmc:Q_OBJECT
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDateTime
@@ -1964,6 +1964,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/t
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
  uic:ui_titlewindow.h
+C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/editorwindow.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/winwindow.h
  mmc:Q_OBJECT
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
@@ -2258,9 +2259,8 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/w
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
-C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/editorwindow.cpp
-C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/colorpickerwindow.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/invader.cpp
+C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/colorpickerwindow.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/gamewindow.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/main.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/mainwindow.cpp

@@ -11,6 +11,7 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
     winWindow = new WinWindow();
     connect(timer, &QTimer::timeout, this, &GameWindow::updateGame);
     connect(this, &GameWindow::WinEvent, winWindow, &WinWindow::setScore);
+    connect(this, &GameWindow::LoseEvent, winWindow, &WinWindow::setScore);
     timer->start(20); // Update game every 20 milliseconds
     qDebug() << timer->isActive();
     leftPressed = false;
@@ -93,6 +94,8 @@ void GameWindow::resetGame() {
 
     score = 0;
 
+    firerate = 0;
+
     update();
 }
 
@@ -140,9 +143,13 @@ void GameWindow::keyPressEvent(QKeyEvent *event) {
     }
     else if (event->key() == Qt::Key_Space){
         qDebug() << "Space";
-        // Create a new bullet and add it to the list
-        Bullet* newBullet = new Bullet(player.getRect().x() + 10, player.getRect().y(), 5, 5, 5, bulletColor);
-        bullets.append(newBullet);
+        if (firerate == 0){
+            Bullet* newBullet = new Bullet(player.getRect().x() + 10, player.getRect().y(), 4, 8, 12, bulletColor);
+            bullets.append(newBullet);
+            firerate = 0;
+        } else {
+            qDebug() << "cannot shoot " << firerate;
+        }
     }
     if (event->key() == Qt::Key_Escape) {
         emit MainButtonClicked();
@@ -166,6 +173,10 @@ void GameWindow::keyReleaseEvent(QKeyEvent *event) {
 }
 
 void GameWindow::updateGame() {
+    //decrease firerate
+    if (firerate > 0){
+        firerate--;
+    }
     // Update bullets
     for (int i = 0; i < bullets.size(); ++i) {
         Bullet* bullet = bullets.at(i);

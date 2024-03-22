@@ -41,6 +41,7 @@ private:
     QList<Bullet*> bullets;
     QList<Invader*> invader;
     QTimer *timer;
+    int firerate;
     bool leftPressed;
     bool rightPressed;
     QColor playerColor;
@@ -56,6 +57,7 @@ private:
 signals:
     void MainButtonClicked();
     void WinEvent(int score);
+    void LoseEvent(int score);
 };
 
 #endif // GAMEWINDOW_H
