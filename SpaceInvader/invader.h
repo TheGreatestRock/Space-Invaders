@@ -1,28 +1,32 @@
-// Invader.h
 #ifndef INVADER_H
 #define INVADER_H
 
 #include <QRect>
 #include <QColor>
+#include <QString>
+#include <QVector>
 
 class Invader {
 public:
-    Invader(int x, int y, int width, int height, int speed, QColor color);
+    Invader(int x, int y, int speed, QColor color);
     QRect getRect() const;
     QColor getColor() const;
     void setColor(QColor color);
     void move();
-    void setDirection(int direction);
-    int getDirection() const;
-    void setPos(int x, int y);
     void hitWall();
     void setSpeed(double speed);
     int getSpeed();
+    void setDirection(int direction);
+    int getDirection() const;
+    void setPos(int x, int y);
+    QVector<QVector<int>> getPattern() const;
+
 private:
     QRect rect;
-    QColor color;
-    double speed;
+    int speed;
     int direction;
+    QColor color;
+    QVector<QVector<int>> pattern; // Store the invader pattern
 };
 
 #endif // INVADER_H

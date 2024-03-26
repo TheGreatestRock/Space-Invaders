@@ -1,23 +1,30 @@
 #ifndef EDITORWINDOW_H
 #define EDITORWINDOW_H
 
-#include <QWidget>
+#include <QDialog>
 #include <QVector>
 
-class EditorWindow : public QWidget
+class EditorWindow : public QDialog
 {
     Q_OBJECT
+
 public:
-    explicit EditorWindow(QWidget *parent = nullptr);
+    explicit EditorWindow(QWidget *parent = nullptr, QString saveFileName = "drawing.txt");
+
+signals:
+    void drawingSaved(const QVector<QVector<bool>> &grid);
 
 protected:
-    void mousePressEvent(QMouseEvent *event) override;
-    void paintEvent(QPaintEvent *event) override;
+    void mousePressEvent(QMouseEvent *event);
+    void paintEvent(QPaintEvent *event);
+
+private slots:
     void saveToFile();
 
 private:
+    static const int gridSize = 10;
     QVector<QVector<bool>> grid;
-    const int gridSize = 16;
+    QString saveFileName;
 };
 
 #endif // EDITORWINDOW_H

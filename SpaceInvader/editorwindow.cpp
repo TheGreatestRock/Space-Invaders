@@ -5,10 +5,24 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <QTextStream>
+#include <QPushButton>
+#include <QLayout>
 
-EditorWindow::EditorWindow(QWidget *parent) : QWidget(parent)
+EditorWindow::EditorWindow(QWidget *parent, QString saveFileName) : QDialog(parent), saveFileName(saveFileName)
 {
     grid = QVector<QVector<bool>>(gridSize, QVector<bool>(gridSize, false));
+    setMinimumSize(300, 350);
+    //name of the window
+    setWindowTitle(saveFileName + " Editor");
+    // Add a save button to the dialog
+    QPushButton *saveButton = new QPushButton("Save", this);
+    connect(saveButton, &QPushButton::clicked, this, &EditorWindow::saveToFile);
+
+    // Set the layout of the dialog
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->addStretch(1);
+    layout->addWidget(saveButton, Qt::AlignBottom);
+    layout->addWidget(saveButton, Qt::AlignBottom);
 }
 
 void EditorWindow::mousePressEvent(QMouseEvent *event)
@@ -39,7 +53,7 @@ void EditorWindow::paintEvent(QPaintEvent *event)
 
 void EditorWindow::saveToFile()
 {
-    QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/drawing.txt";
+    QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/" + saveFileName;
     QFile file(filePath);
     if (file.open(QIODevice::WriteOnly)) {
         QTextStream out(&file);
@@ -50,5 +64,6 @@ void EditorWindow::saveToFile()
             out << Qt::endl;
         }
         file.close();
+        emit drawingSaved(grid);
     }
 }

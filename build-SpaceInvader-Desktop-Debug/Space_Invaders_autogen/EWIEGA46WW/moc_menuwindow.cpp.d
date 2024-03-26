@@ -2,7 +2,10 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/moc_predefs.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QFileInfo \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QStandardPaths \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QTextStream \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
@@ -90,13 +93,16 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/qpainter.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qpolygon.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qregion.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
@@ -107,6 +113,9 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QColorDialog \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QFileDialog \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsScene \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsView \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget \
@@ -124,7 +133,10 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qcolordialog.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qfiledialog.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicsscene.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicsview.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
@@ -133,6 +145,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistwidget.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qrubberband.h \
+  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qscrollarea.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qslider.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qspinbox.h \

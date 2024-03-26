@@ -329,8 +329,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/c
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/invader.h
-C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/winwindow.cpp
-C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/player.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/bullet.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/editorwindow.h
  mmc:Q_OBJECT
@@ -413,7 +411,8 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/e
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h
@@ -620,17 +619,14 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/e
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
+C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/winwindow.cpp
+C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/player.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/gamewindow.h
  mmc:Q_OBJECT
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDateTime
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFileInfo
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QList
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QStandardPaths
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTextStream
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QString
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h
@@ -646,11 +642,8 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h
@@ -661,7 +654,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qline.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qlocale.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qmap.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qmargins.h
@@ -684,7 +676,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsize.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qstandardpaths.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qstring.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringalgorithms.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringlist.h
@@ -694,7 +685,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h
@@ -731,14 +721,11 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmessagebox.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h
@@ -952,14 +939,13 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/g
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/mainwindow.h
  mmc:Q_OBJECT
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDateTime
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFileInfo
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QList
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QStandardPaths
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QString
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTextStream
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector
@@ -980,7 +966,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h
@@ -1053,13 +1038,16 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpainter.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpolygon.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qregion.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h
@@ -1070,12 +1058,14 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QColorDialog
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QFileDialog
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsScene
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsView
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidgetItem
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QSpinBox
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout
@@ -1089,7 +1079,10 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qcolordialog.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qfiledialog.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicsscene.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicsview.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h
@@ -1097,9 +1090,9 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistview.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistwidget.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h
- mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmessagebox.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qrubberband.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qscrollarea.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qslider.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qspinbox.h
@@ -1325,7 +1318,10 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mmc:Q_OBJECT
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QFileInfo
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QStandardPaths
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QTextStream
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractitemmodel.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
@@ -1413,13 +1409,16 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpainter.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qpolygon.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qregion.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h
@@ -1430,6 +1429,9 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QColorDialog
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QFileDialog
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsScene
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsView
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget
@@ -1447,7 +1449,10 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qcolordialog.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qfiledialog.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicsscene.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicsview.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h
@@ -1456,6 +1461,7 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/m
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistwidget.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qrubberband.h
+ mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qscrollarea.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qslider.h
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qspinbox.h
@@ -1964,7 +1970,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/t
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
  uic:ui_titlewindow.h
-C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/editorwindow.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/winwindow.h
  mmc:Q_OBJECT
  mdp:C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
@@ -2259,8 +2264,9 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/w
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  mdp:C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
-C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/invader.cpp
+C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/editorwindow.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/colorpickerwindow.cpp
+C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/invader.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/gamewindow.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/main.cpp
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/mainwindow.cpp

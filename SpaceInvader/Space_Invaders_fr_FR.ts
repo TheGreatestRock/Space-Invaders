@@ -25,4 +25,17 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>MenuWindow</name>
+    <message>
+        <location filename="menuwindow.cpp" line="117"/>
+        <source>Open Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="menuwindow.cpp" line="117"/>
+        <source>Image Files (*.png *.jpg *.bmp)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

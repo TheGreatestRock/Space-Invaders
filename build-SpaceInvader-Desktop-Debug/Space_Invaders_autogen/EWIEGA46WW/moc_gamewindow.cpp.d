@@ -1,14 +1,9 @@
 C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/EWIEGA46WW/moc_gamewindow.cpp: C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/SpaceInvader/gamewindow.h \
   C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceInvader-Desktop-Debug/Space_Invaders_autogen/moc_predefs.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/QDateTime \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/QFileInfo \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QRect \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/QStandardPaths \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/QTextStream \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QString \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+  C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h \
@@ -24,11 +19,8 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h \
@@ -39,7 +31,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qline.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qlocale.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qmap.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qmargins.h \
@@ -62,7 +53,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qsize.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qstandardpaths.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qstring.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringalgorithms.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringlist.h \
@@ -72,7 +62,6 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h \
@@ -109,14 +98,11 @@ C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space\ Invader/build-SpaceIn
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h \
   C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
-  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
-  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \

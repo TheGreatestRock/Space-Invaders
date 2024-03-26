@@ -1,10 +1,13 @@
-// gamewindow.cpp
 #include "gamewindow.h"
 #include <QPainter>
 #include <QDebug>
+#include <QStandardPaths>
+#include <QDir>
+#include <QFileInfo>
+#include <QDateTime>
 
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
-    player(width()/2, (9*height())/10, 20, 5, 5, Qt::white), score(0)
+    player(width()/2, (9*height())/10, 5, Qt::white), score(0)
 {
     qDebug() << "GameWindow constructor";
     timer = new QTimer(this);
@@ -21,7 +24,7 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
 
 void GameWindow::loadOptionsFromFile() {
     QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/options";
-    QDir().mkpath(QFileInfo(filePath).absoluteDir().path());
+    QDir().mkpath(filePath);
     QFile file(filePath);
     if (file.open(QIODevice::ReadOnly)) {
         QTextStream in(&file);
@@ -66,11 +69,10 @@ void GameWindow::resetGame() {
     qDeleteAll(invader);
     invader.clear();
 
-    // Reinitialize player position
-    player.setPos(width()/2, (9 * height()) / 10);
-    player.setColor(playerColor);
+    // Reinitialize player position, look and color
+    player = Player(width()/2, (9*height())/10, 5, playerColor);
 
-    // Reinitialize invader positions
+    // Reinitialize invader positions , look abd color
     const int invaderSpacing = (width() - (10 * 10)) / (10 + 1);
 
     for (int i = 0; i < numberOfInvaders; ++i) {
@@ -79,9 +81,7 @@ void GameWindow::resetGame() {
 
         int x = invaderSpacing + col * (10 + invaderSpacing); // Calculate x position
         int y = 50 + row * 20; // Calculate y position
-
-        Invader* newInvader = new Invader(x, y, 10, 5, 5, invaderColor);
-        invader.append(newInvader);
+        invader.append(new Invader(x, y, 5, invaderColor));
     }
 
     // Restart the game timer if it's not active
@@ -99,7 +99,6 @@ void GameWindow::resetGame() {
     update();
 }
 
-
 void GameWindow::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.fillRect(0, 0, width(), height(), Qt::black); // Background
@@ -110,25 +109,56 @@ void GameWindow::paintEvent(QPaintEvent *event) {
     painter.drawText(10, 20, "Score: " + QString::number(score));
 
     // Draw clock with current time on the right
-    currentTime = QDateTime::currentDateTime().toString("hh:mm:ss");
+    QString currentTime = QDateTime::currentDateTime().toString("hh:mm:ss");
     painter.drawText(width() - 100, 20, currentTime);
 
+    //reset pen
+    painter.setPen(Qt::black);
     // Draw player spaceship
     painter.setBrush(player.getColor());
-    painter.drawRect(player.getRect());
-    painter.drawRect(player.getCannon());
+    QVector<QVector<int>> playerPattern = player.getPattern();
+    for (int i = 0; i < playerPattern.size(); ++i) {
+        for (int j = 0; j < playerPattern.at(i).size(); ++j) {
+            if (playerPattern.at(i).at(j) == 1) {
+                painter.drawRect(player.getRect().left() + j, player.getRect().top() + i * 2, 2, 2);
+            }
+        }
+    }
 
     // Draw bullets
     for (Bullet* bullet : bullets) {
-        painter.setBrush(bullet->getColor());
-        painter.drawRect(bullet->getRect());
+        painter.setBrush(inverted(bullet->getColor()));
+        QVector<QVector<int>> bulletPattern = bullet->getPattern();
+        for (int i = 0; i < bulletPattern.size(); ++i) {
+            for (int j = 0; j < bulletPattern.at(i).size(); ++j) {
+                if (bulletPattern.at(i).at(j) == 1) {
+                    painter.drawRect(bullet->getRect().left() + j, bullet->getRect().top() + i * 2, 2, 2);
+                }
+            }
+        }
     }
 
-    // Draw invader
-    for (Invader* invader : invader) {
-        painter.setBrush(invader->getColor());
-        painter.drawRect(invader->getRect());
+    // Draw invaders
+    for (Invader* invad : invader) {
+        QVector<QVector<int>> pattern = invad->getPattern();
+        //pattern is for 1 invader and each 1 is a pixel of the color of the invader, each pixel is 4x4
+        for (int i = 0; i < pattern.size(); ++i) {
+            for (int j = 0; j < pattern.at(i).size(); ++j) {
+                if (pattern.at(i).at(j) == 1) {
+                    painter.setBrush(invad->getColor());
+                    painter.drawRect(invad->getRect().left() + j, invad->getRect().top() + i * 2, 2, 2);
+                }
+            }
+        }
     }
+}
+
+QColor GameWindow::inverted(const QColor& color) {
+    int red = 255 - color.red();
+    int green = 255 - color.green();
+    int blue = 255 - color.blue();
+
+    return QColor(red, green, blue);
 }
 
 void GameWindow::keyPressEvent(QKeyEvent *event) {
@@ -144,7 +174,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event) {
     else if (event->key() == Qt::Key_Space){
         qDebug() << "Space";
         if (firerate == 0){
-            Bullet* newBullet = new Bullet(player.getRect().x() + 10, player.getRect().y(), 4, 8, 12, bulletColor);
+            Bullet* newBullet = new Bullet(player.getCannon().left() + player.getCannon().width()/2, player.getCannon().top(), 12, bulletColor);
             bullets.append(newBullet);
             firerate = 0;
         } else {
@@ -181,6 +211,7 @@ void GameWindow::updateGame() {
     for (int i = 0; i < bullets.size(); ++i) {
         Bullet* bullet = bullets.at(i);
         bullet->move();
+    // Check if bullet is out
         // Check if bullet is out of bounds, delete it if so
         if (bullet->getRect().y() < 0) {
             delete bullet;
@@ -189,16 +220,16 @@ void GameWindow::updateGame() {
             continue; // Continue to the next iteration to avoid accessing removed element
         }
     }
-    // Update invader position
+    // Update invaders position
     for (int i = 0; i < invader.size(); ++i) {
-        Invader* inv = invader.at(i);
-        inv->move();
+        Invader* invad = invader.at(i);
+        invad->move();
         // Check if invader is out of bounds, change direction if so
-        if (inv->getRect().right() > width() || inv->getRect().left() < 0) {
-            inv->hitWall();
+        if (invad->getRect().right() > width() || invad->getRect().left() < 0) {
+            invad->hitWall();
         }
     }
-    //check bullet/invader collision
+    // Check bullet/invader collision
     for (int i = 0; i < bullets.size(); ++i) {
         for (int j = 0; j < invader.size(); ++j) {
             if (i >= bullets.size() || j >= invader.size()) {
@@ -216,7 +247,7 @@ void GameWindow::updateGame() {
                         qDebug() << "Index out of range in invader speed increment";
                         break;
                     }
-                    invader[k]->setSpeed(invader[k]->getSpeed()*1.1);
+                    invader[k]->setSpeed(invader[k]->getSpeed() * 1.1);
                 }
                 score += 10;
             }
@@ -228,12 +259,12 @@ void GameWindow::updateGame() {
         player.moveLeft();
         qDebug() << "Player moved left";
     }
-    if (rightPressed && player.getRect().right() < width()- player.getRect().width()/2){
+    if (rightPressed && player.getRect().right() < width() - player.getRect().width()/2){
         player.moveRight();
         qDebug() << "Player moved right";
     }
 
-    // Check if invader list is empty
+    // Check if invaders list is empty
     if (invader.isEmpty()) {
         emit WinEvent(score);
         timer->stop();
@@ -254,7 +285,7 @@ GameWindow::~GameWindow() {
     for (Bullet* bullet : bullets) {
         delete bullet;
     }
-    for (Invader* invader : invader) {
-        delete invader;
+    for (Invader* inv : invader) {
+        delete inv;
     }
 }
