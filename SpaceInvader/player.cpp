@@ -112,7 +112,7 @@ QRect Player::getRect() const {
 
 QRect Player::getCannon() const {
     //center of the player
-    int x = rect.left() + rect.width() /2 -4;
+    int x = rect.left() + rect.width() /2;
     int y = rect.top();
     return QRect(x, y, 1, 1);
 }

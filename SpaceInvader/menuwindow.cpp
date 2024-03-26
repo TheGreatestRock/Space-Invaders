@@ -37,7 +37,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     nbInvaderLayout->addWidget(nbInvaderLabel);
     nbInvaderLayout->addWidget(nbInvaderSpinBox);
 
-    backgroundButton = new QPushButton("Background", this);
+    backgroundButton = new QPushButton("Background (WIP)", this);
     returnButton = new QPushButton("Return to Main", this);
 
     connect(colorBulletButton, &QPushButton::clicked, this, &MenuWindow::handleColorBulletButtonClicked);

@@ -89,6 +89,7 @@ Bullet::Bullet(int x, int y, int speed, QColor color)
             }
             pattern.push_back(croppedRow);
         }
+
     }
     //print the pattern wiut QDebug and
     for (int i = 0; i < pattern.size(); ++i) {
@@ -102,6 +103,10 @@ Bullet::Bullet(int x, int y, int speed, QColor color)
     int minWidth = pattern[0].size();
     int minHeight = pattern.size();
     rect = QRect(x, y, minWidth, minHeight);
+
+    // offset so that the middle of the bullet is at the x, y position
+    rect.moveLeft(x - minWidth / 2);
+    rect.moveTop(y - minHeight / 2);
 }
 
 QRect Bullet::getRect() const {
