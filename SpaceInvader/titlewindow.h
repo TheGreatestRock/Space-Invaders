@@ -30,6 +30,7 @@ private slots:
 private:
     Ui::MainWindow ui; // UI object
     bool gameWon;      // Game status
+    int getHighscore();
 };
 
 #endif // TITLEWINDOW_H

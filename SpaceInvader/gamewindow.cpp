@@ -14,7 +14,7 @@
 
 const int PLAYER_SIZE = 5;
 const int INVADER_SIZE = 5;
-const int INVADER_SPACING = 30;
+const int INVADER_SPACING = 45;
 const int BULLET_SPEED = 12;
 const int FIRE_RATE = 5;
 const int SCORE_PER_INVADER = 10;
@@ -33,6 +33,7 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent), score(0)
     connect(this, &GameWindow::LoseEvent, winWindow, &WinWindow::setScore);
     timer->start(UPDATE_INTERVAL); // Update game every 20 milliseconds
     qDebug() << timer->isActive();
+    timer->stop();
     leftPressed = false;
     rightPressed = false;
     resetGame();
