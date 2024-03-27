@@ -7,6 +7,10 @@
 #include <QDateTime>
 #include <QSoundEffect>
 #include <QKeyEvent>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QUrl>
 
 const int PLAYER_SIZE = 5;
 const int INVADER_SIZE = 5;
@@ -16,10 +20,11 @@ const int FIRE_RATE = 5;
 const int SCORE_PER_INVADER = 10;
 const int UPDATE_INTERVAL = 20;
 
-GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
-    player(width()/2, (9*height())/10, PLAYER_SIZE, Qt::white), score(0)
+GameWindow::GameWindow(QWidget *parent) : QWidget(parent), score(0)
 {
     qDebug() << "GameWindow constructor";
+    checkSaveFiles();
+    player = new Player(width()/2, (9*height())/10, PLAYER_SIZE, Qt::white);
     timer = new QTimer(this);
     winWindow =  new WinWindow();
     winWindow->hide();
@@ -32,6 +37,166 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
     rightPressed = false;
     resetGame();
 }
+
+
+//this function basically checks if there are local save files, if not it creates them
+void GameWindow::checkSaveFiles() {
+    //for the option file 
+    qDebug() << "Checking save files";
+    QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/options";
+    QDir().mkpath(QFileInfo(filePath).absoluteDir().path());
+    QFile file(filePath);
+    if (!file.exists()) {
+        qDebug() << "Creating save files";
+        if (file.open(QIODevice::WriteOnly)) {
+            QTextStream out(&file);
+            out << "ListOfColors: #ffffff\n";
+            out << "ShipColor: #ffffff\n";
+            out << "BulletColor: #ffffff\n";
+            out << "InvaderColor: #ffffff\n";
+            out << "NumberOfInvaders: 50\n";
+            file.close();
+        }
+        else {
+            qDebug() << "Could not open file";
+        }
+    }
+    
+    //create the file for the score
+    qDebug() << "Checking score files";
+    QString filePathScore = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/score";
+    QDir().mkpath(QFileInfo(filePathScore).absoluteDir().path());
+    QFile fileScore(filePathScore);
+    if (!fileScore.exists()) {
+        qDebug() << "Creating score files";
+        if (fileScore.open(QIODevice::WriteOnly)) {
+            QTextStream out(&fileScore);
+            out << "\n";
+            fileScore.close();
+        }
+        else {
+            qDebug() << "Could not open file";
+        }
+    }
+
+    //create the basic files for the bullets, invaders and player looks
+    qDebug() << "Checking save files";
+    QString filePathBullets = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/Bullet";
+    QDir().mkpath(QFileInfo(filePathBullets).absoluteDir().path());
+    QFile fileBullets(filePathBullets);
+    if (!fileBullets.exists()) {
+        qDebug() << "Creating bulelt look";
+        if (fileBullets.open(QIODevice::WriteOnly)) {
+            QTextStream out(&fileBullets);
+            out << "0 0 0 0 1 0 0 0 0 0 \n";
+            out << "0 0 0 1 1 1 0 0 0 0 \n";
+            out << "0 0 0 1 1 1 0 0 0 0 \n";
+            out << "0 0 0 1 1 1 0 0 0 0 \n";
+            out << "0 0 1 1 1 1 1 0 0 0 \n";
+            out << "0 0 0 0 1 0 0 0 0 0 \n";
+            out << "0 0 0 0 1 0 0 0 0 0 \n";
+            out << "0 0 0 0 0 0 0 0 0 0 \n";
+            out << "0 0 0 0 0 0 0 0 0 0 \n";
+            out << "0 0 0 0 0 0 0 0 0 0 \n";
+            fileBullets.close();
+        }
+        else {
+            qDebug() << "Could not open file";
+        }
+    }
+
+    qDebug() << "Checking invader look";
+    QString filePathInvaders = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/Invader";
+    QDir().mkpath(QFileInfo(filePathInvaders).absoluteDir().path());
+    QFile fileInvaders(filePathInvaders);
+    if (!fileInvaders.exists()) {
+        qDebug() << "Creating invader look";
+        if (fileInvaders.open(QIODevice::WriteOnly)) {
+            QTextStream out(&fileInvaders);
+            out << "0 0 1 0 0 0 0 1 0 0 \n";
+            out << "0 0 0 1 0 0 1 0 0 0 \n";
+            out << "0 0 0 1 1 1 1 0 0 0 \n";
+            out << "0 1 1 0 1 1 0 1 1 0 \n";
+            out << "1 1 1 1 1 1 1 1 1 1 \n";
+            out << "1 0 1 1 1 1 1 1 0 1 \n";
+            out << "1 0 1 0 0 0 0 1 0 1 \n";
+            out << "0 0 0 1 0 0 1 0 0 0 \n";
+            out << "0 0 0 0 0 0 0 0 0 0 \n";
+            out << "0 0 0 0 0 0 0 0 0 0 \n";
+            fileInvaders.close();
+        }
+        else {
+            qDebug() << "Could not open file";
+        }
+    }
+
+    qDebug() << "Checking player look";
+    QString filePathPlayer = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/Ship";
+    QDir().mkpath(QFileInfo(filePathPlayer).absoluteDir().path());
+    QFile filePlayer(filePathPlayer);
+    if (!filePlayer.exists()) {
+        qDebug() << "Creating player look";
+        if (filePlayer.open(QIODevice::WriteOnly)) {
+            QTextStream out(&filePlayer);
+            out << "0 0 0 0 0 0 0 0 0 0 \n"; 
+            out << "0 0 0 0 1 1 0 0 0 0 \n"; 
+            out << "0 0 0 0 1 1 0 0 0 0 \n"; 
+            out << "0 1 1 0 1 1 0 1 1 0 \n"; 
+            out << "1 0 1 1 0 0 1 1 0 1 \n"; 
+            out << "1 0 1 1 0 0 1 1 0 1 \n"; 
+            out << "1 0 1 1 1 1 1 1 0 1 \n"; 
+            out << "0 1 1 1 1 1 1 1 1 0 \n"; 
+            out << "0 0 1 1 0 0 1 1 0 0 \n"; 
+            out << "0 0 0 0 0 0 0 0 0 0 \n"; 
+            filePlayer.close();
+        }
+        else {
+            qDebug() << "Could not open file";
+        }
+    }
+
+
+
+    QString resourcePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDir().mkpath(resourcePath + "/sfx"); // Create the 'sfx' directory if it doesn't exist
+
+    // Set up the network access manager
+    qDebug() << "Downloading sound files";
+    QNetworkAccessManager* networkAccessManager = new QNetworkAccessManager(this);
+    connect(networkAccessManager, &QNetworkAccessManager::finished, this, &GameWindow::handleDownloadFinished);
+
+    // Download sound files from GitHub repository
+    qDebug() << "Downloading sound files";
+    QStringList soundFiles = {"/Laser_Shoot.wav", "/Explosion.wav", "/Explosion2.wav"};
+    QString githubRepoUrl = "https://raw.githubusercontent.com/TheGreatestRock/Space-Invaders/main/SpaceInvader/sfx";
+    for (const QString& soundFile : soundFiles) {
+        QString fileUrl = githubRepoUrl + soundFile;
+        QUrl url(fileUrl);
+        QNetworkRequest request(url);
+        networkAccessManager->get(request);
+    }
+
+}
+
+void GameWindow::handleDownloadFinished(QNetworkReply* reply) {
+    if (reply->error() == QNetworkReply::NoError) {
+        QString soundFile = reply->url().toString().remove(0, reply->url().toString().lastIndexOf('/') + 1);
+        QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/sfx/" + soundFile;
+        QFile file(filePath);
+        if (file.open(QIODevice::WriteOnly)) {
+            file.write(reply->readAll());
+            file.close();
+        } else {
+            qDebug() << "Could not open file: " << filePath;
+        }
+    } else {
+        qDebug() << "Download error: " << reply->errorString();
+    }
+
+    reply->deleteLater();
+}
+
+    
 
 void GameWindow::loadOptionsFromFile() {
     QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/options";
@@ -89,7 +254,7 @@ void GameWindow::clearBulletsAndInvaders() {
 }
 
 void GameWindow::initializePlayerAndInvaders() {
-    player = Player(width()/2, (9*height())/10, PLAYER_SIZE, playerColor);
+    player = new Player(width()/2, (9*height())/10, PLAYER_SIZE, playerColor);
     for (int i = 0; i < numberOfInvaders; ++i) {
         int row = i / 10;
         int col = i % 10;
@@ -116,14 +281,16 @@ void GameWindow::resetGameParameters() {
 }
 
 void GameWindow::initializeSounds() {
+    QString resourcePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+
     laserShootSound = new QSoundEffect(this);
-    laserShootSound->setSource(QUrl::fromLocalFile("C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/sfx/Laser_Shoot.wav"));
+    laserShootSound->setSource(QUrl::fromLocalFile(resourcePath + "/sfx/Laser_Shoot.wav"));
 
     explosionInvaderSound = new QSoundEffect(this);
-    explosionInvaderSound->setSource(QUrl::fromLocalFile("C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/sfx/Explosion.wav"));
+    explosionInvaderSound->setSource(QUrl::fromLocalFile(resourcePath + "/sfx/Explosion.wav"));
 
     explosionPlayerSound = new QSoundEffect(this);
-    explosionPlayerSound->setSource(QUrl::fromLocalFile("C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/sfx/Explosion2.wav"));
+    explosionPlayerSound->setSource(QUrl::fromLocalFile(resourcePath + "/sfx/Explosion2.wav"));
 }
 
 void GameWindow::paintEvent(QPaintEvent *event) {
@@ -142,12 +309,12 @@ void GameWindow::paintEvent(QPaintEvent *event) {
     //reset pen
     painter.setPen(Qt::black);
     // Draw player spaceship
-    painter.setBrush(player.getColor());
-    QVector<QVector<int>> playerPattern = player.getPattern();
+    painter.setBrush(player->getColor());
+    QVector<QVector<int>> playerPattern = player->getPattern();
     for (int i = 0; i < playerPattern.size(); ++i) {
         for (int j = 0; j < playerPattern.at(i).size(); ++j) {
             if (playerPattern.at(i).at(j) == 1) {
-                painter.drawRect(player.getRect().left() + j, player.getRect().top() + i * 2, 2, 2);
+                painter.drawRect(player->getRect().left() + j, player->getRect().top() + i * 2, 2, 2);
             }
         }
     }
@@ -201,7 +368,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event) {
     else if (event->key() == Qt::Key_Space){
         qDebug() << "Space";
         if (firerate == 0){
-            Bullet* newBullet = new Bullet(player.getCannon().left() + player.getCannon().width()/2, player.getCannon().top(), BULLET_SPEED, bulletColor);
+            Bullet* newBullet = new Bullet(player->getCannon().left() + player->getCannon().width()/2, player->getCannon().top(), BULLET_SPEED, bulletColor);
             bullets.append(newBullet);
             firerate = FIRE_RATE;
             laserShootSound->play();
@@ -261,7 +428,7 @@ void GameWindow::updateGame() {
                 break;
             }
             // Check if invader is at the same level as the player then emit LoseEvent
-            if (invad->getRect().bottom() > player.getRect().top()) {
+            if (invad->getRect().bottom() > player->getRect().top()) {
                 winWindow->setWin(false);
                 emit LoseEvent(score);
                 timer->stop();
@@ -302,12 +469,12 @@ void GameWindow::updateGame() {
     }
 
     // Update player position based on key presses
-    if (leftPressed && player.getRect().left() > 0){
-        player.moveLeft();
+    if (leftPressed && player->getRect().left() > 0){
+        player->moveLeft();
         qDebug() << "Player moved left";
     }
-    if (rightPressed && player.getRect().right() < width() - player.getRect().width()/2){
-        player.moveRight();
+    if (rightPressed && player->getRect().right() < width() - player->getRect().width()/2){
+        player->moveRight();
         qDebug() << "Player moved right";
     }
 

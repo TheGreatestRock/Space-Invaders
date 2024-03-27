@@ -9,6 +9,7 @@
 #include "invader.h"
 #include "winwindow.h"
 #include <QSoundEffect>
+#include <QNetworkReply>
 
 class GameWindow : public QWidget
 {
@@ -35,7 +36,7 @@ protected:
 
 private:
     QTimer *timer;
-    Player player;
+    Player *player;
     QVector<Bullet*> bullets;
     QVector<Invader*> invader;
     WinWindow *winWindow;
@@ -61,6 +62,10 @@ private:
     void initializeSounds();
     QColor inverted(const QColor& color);
     void updateGame();
+
+    void checkSaveFiles();
+
+    void handleDownloadFinished(QNetworkReply* reply);
 };
 
 #endif // GAMEWINDOW_H
