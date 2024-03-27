@@ -133,7 +133,7 @@ void Invader::setSpeed(double speed) {
     this->speed = speed;
 }
 
-int Invader::getSpeed() {
+double Invader::getSpeed() {
     return speed;
 }
 

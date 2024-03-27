@@ -1,4 +1,6 @@
 QT       += widgets
+QT       += multimedia
+
 
 CONFIG   += c++17
 
@@ -42,7 +44,7 @@ TRANSLATIONS = $$TS_FILES
 
 # Specify the target platform (if necessary)
 # e.g., for Android:
-# QMAKE_PLATFORM = android
+# QMAKE_PLATFORM = pc
 
 # Bundle settings
 QMAKE_BUNDLE_NAME = Space_Invaders

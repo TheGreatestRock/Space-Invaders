@@ -15,7 +15,7 @@ public:
     void move();
     void hitWall();
     void setSpeed(double speed);
-    int getSpeed();
+    double getSpeed();
     void setDirection(int direction);
     int getDirection() const;
     void setPos(int x, int y);
@@ -23,7 +23,7 @@ public:
 
 private:
     QRect rect;
-    int speed;
+    double speed;
     int direction;
     QColor color;
     QVector<QVector<int>> pattern; // Store the invader pattern

@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QDateTime>
+#include <QSoundEffect>
 
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
     player(width()/2, (9*height())/10, 5, Qt::white), score(0)
@@ -82,7 +83,7 @@ void GameWindow::resetGame() {
 
         int x = invaderSpacing + col * (10 + invaderSpacing); // Calculate x position
         int y = 50 + row * 20; // Calculate y position
-        invader.append(new Invader(x, y, 5, invaderColor));
+        invader.append(new Invader(x, y, 5.0, invaderColor));
     }
 
     // Restart the game timer if it's not active
@@ -96,6 +97,18 @@ void GameWindow::resetGame() {
     score = 0;
 
     firerate = 0;
+
+    invaderMoveTimer = 0;
+
+    //sound effecrt
+    laserShootSound = new QSoundEffect(this);
+    laserShootSound->setSource(QUrl::fromLocalFile("C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/sfx/Laser_Shoot.wav"));
+
+    explosionInvaderSound = new QSoundEffect(this);
+    explosionInvaderSound->setSource(QUrl::fromLocalFile("C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/sfx/Explosion.wav"));
+
+    explosionPlayerSound = new QSoundEffect(this);
+    explosionPlayerSound->setSource(QUrl::fromLocalFile("C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/sfx/Explosion2.wav"));
 
     update();
 }
@@ -177,7 +190,8 @@ void GameWindow::keyPressEvent(QKeyEvent *event) {
         if (firerate == 0){
             Bullet* newBullet = new Bullet(player.getCannon().left() + player.getCannon().width()/2, player.getCannon().top(), 12, bulletColor);
             bullets.append(newBullet);
-            firerate = 0;
+            firerate = 5;
+            laserShootSound->play();
         } else {
             qDebug() << "cannot shoot " << firerate;
         }
@@ -221,21 +235,31 @@ void GameWindow::updateGame() {
             continue; // Continue to the next iteration to avoid accessing removed element
         }
     }
-    // Update invaders position
-    for (int i = 0; i < invader.size(); ++i) {
-        Invader* invad = invader.at(i);
-        invad->move();
-        // Check if invader is out of bounds, change direction if so
-        if (invad->getRect().right() > width() || invad->getRect().left() < 0) {
-            invad->hitWall();
+    if (invaderMoveTimer == 0) {
+        // Update invaders position
+        for (int i = 0; i < invader.size(); ++i) {
+            Invader* invad = invader.at(i);
+            invad->move();
+            // Check if invader is out of bounds, change direction if so
+            if (invad->getRect().right() > width() || invad->getRect().left() < 0) {
+                for (int j = 0; j < invader.size(); ++j) {
+                    invader[j]->hitWall();
+                }
+                break;
+            }
+            // Check if invader is at the same level as the player then emit LoseEvent
+            if (invad->getRect().bottom() > player.getRect().top()) {
+                winWindow->setWin(false);
+                emit LoseEvent(score);
+                timer->stop();
+                winWindow->show();
+                explosionPlayerSound->play();
+            }
         }
-        // Check if invader is at the same level as the player then emit LoseEvent
-        if (invad->getRect().bottom() > player.getRect().top()) {
-            winWindow->setWin(false);
-            emit LoseEvent(score);
-            timer->stop();
-            winWindow->show();
-        }
+        //decrease the time when there are less invaders
+        invaderMoveTimer = invader.size() / 10;
+    } else {
+        invaderMoveTimer--;
     }
     // Check bullet/invader collision
     for (int i = 0; i < bullets.size(); ++i) {
@@ -255,9 +279,11 @@ void GameWindow::updateGame() {
                         qDebug() << "Index out of range in invader speed increment";
                         break;
                     }
-                    invader[k]->setSpeed(invader[k]->getSpeed() * 1.15);
+                    invader[k]->setSpeed(invader[k]->getSpeed() * 1.01);
+                    qDebug() << "Speed : " << invader[k]->getSpeed();
                 }
                 score += 10;
+                explosionInvaderSound->play();
             }
         }
     }
@@ -297,4 +323,7 @@ GameWindow::~GameWindow() {
     for (Invader* inv : invader) {
         delete inv;
     }
+    delete laserShootSound;
+    delete explosionInvaderSound;
+    delete explosionPlayerSound;
 }

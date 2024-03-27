@@ -9,6 +9,8 @@
 #include "bullet.h"
 #include "invader.h"
 #include "winwindow.h"
+#include <QSoundEffect>
+#include <QThread>
 
 class GameWindow : public QWidget
 {
@@ -49,9 +51,18 @@ private:
     bool leftPressed;
     bool rightPressed;
     int firerate;
+    int invaderMoveTimer;
+    bool hitWall;
     int numberOfInvaders;
     QColor inverted(const QColor& color);
     void loadOptionsFromFile();
+    QSoundEffect *laserShootSound;
+    QSoundEffect *explosionInvaderSound;
+    QSoundEffect *explosionPlayerSound;
+    QThread *laserShootThread;
+    QThread *explosionInvaderThread;
+    QThread *explosionPlayerThread;
+    void playSound(QSoundEffect *sound, QThread *thread);
 };
 
 #endif // GAMEWINDOW_H
