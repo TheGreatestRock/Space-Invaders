@@ -11,7 +11,8 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
 {
     qDebug() << "GameWindow constructor";
     timer = new QTimer(this);
-    winWindow = new WinWindow();
+    winWindow =  new WinWindow(this, false);
+    winWindow->hide();
     connect(timer, &QTimer::timeout, this, &GameWindow::updateGame);
     connect(this, &GameWindow::WinEvent, winWindow, &WinWindow::setScore);
     connect(this, &GameWindow::LoseEvent, winWindow, &WinWindow::setScore);
@@ -228,6 +229,13 @@ void GameWindow::updateGame() {
         if (invad->getRect().right() > width() || invad->getRect().left() < 0) {
             invad->hitWall();
         }
+        // Check if invader is at the same level as the player then emit LoseEvent
+        if (invad->getRect().bottom() > player.getRect().top()) {
+            winWindow->setWin(false);
+            emit LoseEvent(score);
+            timer->stop();
+            winWindow->show();
+        }
     }
     // Check bullet/invader collision
     for (int i = 0; i < bullets.size(); ++i) {
@@ -266,6 +274,7 @@ void GameWindow::updateGame() {
 
     // Check if invaders list is empty
     if (invader.isEmpty()) {
+        winWindow->setWin(true);
         emit WinEvent(score);
         timer->stop();
         winWindow->show();

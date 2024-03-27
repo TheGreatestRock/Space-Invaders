@@ -31,6 +31,8 @@ void EditorWindow::mousePressEvent(QMouseEvent *event)
     int x = event->x() / cellSize;
     int y = event->y() / cellSize;
 
+    if (x < 0 || x >= gridSize || y < 0 || y >= gridSize)
+        return;
     grid[y][x] = !grid[y][x];
 
     update();
