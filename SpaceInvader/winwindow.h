@@ -14,6 +14,7 @@ public:
 
 public slots:
     void setScore(int score);
+    void setWin(bool win);
     void copyToClipboard();
 
 private:

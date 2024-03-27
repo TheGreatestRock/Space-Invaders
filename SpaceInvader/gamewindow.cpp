@@ -11,7 +11,7 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
 {
     qDebug() << "GameWindow constructor";
     timer = new QTimer(this);
-    winWindow =  new WinWindow(this, false);
+    winWindow =  new WinWindow();
     winWindow->hide();
     connect(timer, &QTimer::timeout, this, &GameWindow::updateGame);
     connect(this, &GameWindow::WinEvent, winWindow, &WinWindow::setScore);
@@ -128,7 +128,7 @@ void GameWindow::paintEvent(QPaintEvent *event) {
 
     // Draw bullets
     for (Bullet* bullet : bullets) {
-        painter.setBrush(inverted(bullet->getColor()));
+        painter.setBrush(bullet->getColor());
         QVector<QVector<int>> bulletPattern = bullet->getPattern();
         for (int i = 0; i < bulletPattern.size(); ++i) {
             for (int j = 0; j < bulletPattern.at(i).size(); ++j) {
@@ -255,7 +255,7 @@ void GameWindow::updateGame() {
                         qDebug() << "Index out of range in invader speed increment";
                         break;
                     }
-                    invader[k]->setSpeed(invader[k]->getSpeed() * 1.1);
+                    invader[k]->setSpeed(invader[k]->getSpeed() * 1.15);
                 }
                 score += 10;
             }

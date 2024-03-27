@@ -5,7 +5,7 @@
 #include <QStandardPaths>
 #include <QDebug>
 
-Invader::Invader(int x, int y, int speed, QColor color)
+Invader::Invader(int x, int y, double speed, QColor color)
     : speed(speed), direction(1), color(color) {
     // Read pattern from file
     QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/Invader";

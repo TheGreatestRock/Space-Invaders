@@ -15,7 +15,7 @@ WinWindow::WinWindow(QWidget *parent) : QWidget(parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    winLabel = new QLabel("You win", this);
+    winLabel = new QLabel("You Lost", this);
     highScoreLabel = new QLabel("Highscore: ", this);
     scoreLabel = new QLabel("Score: ", this);
     copyButton = new QPushButton("Copy to Clipboard", this);
@@ -82,6 +82,14 @@ void WinWindow::saveScore(int score) {
     }
     file.close();
     saveScoreToFile(score);
+}
+
+void WinWindow::setWin(bool win){
+    if (win){
+        winLabel->setText("You Won");
+    } else {
+        winLabel->setText("You Lost");
+    }
 }
 
 void WinWindow::saveScoreToFile(int score) {

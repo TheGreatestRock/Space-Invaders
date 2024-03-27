@@ -8,7 +8,7 @@
 
 class Invader {
 public:
-    Invader(int x, int y, int speed, QColor color);
+    Invader(int x, int y, double speed, QColor color);
     QRect getRect() const;
     QColor getColor() const;
     void setColor(QColor color);
