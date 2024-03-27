@@ -6,9 +6,18 @@
 #include <QFileInfo>
 #include <QDateTime>
 #include <QSoundEffect>
+#include <QKeyEvent>
+
+const int PLAYER_SIZE = 5;
+const int INVADER_SIZE = 5;
+const int INVADER_SPACING = 30;
+const int BULLET_SPEED = 12;
+const int FIRE_RATE = 5;
+const int SCORE_PER_INVADER = 10;
+const int UPDATE_INTERVAL = 20;
 
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
-    player(width()/2, (9*height())/10, 5, Qt::white), score(0)
+    player(width()/2, (9*height())/10, PLAYER_SIZE, Qt::white), score(0)
 {
     qDebug() << "GameWindow constructor";
     timer = new QTimer(this);
@@ -17,7 +26,7 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent),
     connect(timer, &QTimer::timeout, this, &GameWindow::updateGame);
     connect(this, &GameWindow::WinEvent, winWindow, &WinWindow::setScore);
     connect(this, &GameWindow::LoseEvent, winWindow, &WinWindow::setScore);
-    timer->start(20); // Update game every 20 milliseconds
+    timer->start(UPDATE_INTERVAL); // Update game every 20 milliseconds
     qDebug() << timer->isActive();
     leftPressed = false;
     rightPressed = false;
@@ -63,44 +72,50 @@ void GameWindow::loadOptionsFromFile() {
 
 void GameWindow::resetGame() {
     loadOptionsFromFile();
-    // Clear bullets
+    clearBulletsAndInvaders();
+    initializePlayerAndInvaders();
+    restartTimerIfNotActive();
+    resetKeyPresses();
+    resetGameParameters();
+    initializeSounds();
+    update();
+}
+
+void GameWindow::clearBulletsAndInvaders() {
     qDeleteAll(bullets);
     bullets.clear();
-
-    // Clear invaders
     qDeleteAll(invader);
     invader.clear();
+}
 
-    // Reinitialize player position, look and color
-    player = Player(width()/2, (9*height())/10, 5, playerColor);
-
-    // Reinitialize invader positions , look abd color
-    const int invaderSpacing = (width() - (10 * 10)) / (10 + 1);
-
+void GameWindow::initializePlayerAndInvaders() {
+    player = Player(width()/2, (9*height())/10, PLAYER_SIZE, playerColor);
     for (int i = 0; i < numberOfInvaders; ++i) {
-        int row = i / 10; // Calculate the row
-        int col = i % 10; // Calculate the column within the row
-
-        int x = invaderSpacing + col * (10 + invaderSpacing); // Calculate x position
-        int y = 50 + row * 20; // Calculate y position
-        invader.append(new Invader(x, y, 5.0, invaderColor));
+        int row = i / 10;
+        int col = i % 10;
+        int x = INVADER_SPACING + col * (INVADER_SIZE + INVADER_SPACING);
+        int y = 50 + row * 20;
+        invader.append(new Invader(x, y, INVADER_SIZE, invaderColor));
     }
+}
 
-    // Restart the game timer if it's not active
+void GameWindow::restartTimerIfNotActive() {
     if (!timer->isActive())
-        timer->start(20);
+        timer->start(UPDATE_INTERVAL);
+}
 
-    // Reset key presses
+void GameWindow::resetKeyPresses() {
     leftPressed = false;
     rightPressed = false;
+}
 
+void GameWindow::resetGameParameters() {
     score = 0;
-
     firerate = 0;
-
     invaderMoveTimer = 0;
+}
 
-    //sound effecrt
+void GameWindow::initializeSounds() {
     laserShootSound = new QSoundEffect(this);
     laserShootSound->setSource(QUrl::fromLocalFile("C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/sfx/Laser_Shoot.wav"));
 
@@ -109,8 +124,6 @@ void GameWindow::resetGame() {
 
     explosionPlayerSound = new QSoundEffect(this);
     explosionPlayerSound->setSource(QUrl::fromLocalFile("C:/Users/thegr/Documents/Cours_IUT_2023_2024/S4/C++/Space Invader/SpaceInvader/sfx/Explosion2.wav"));
-
-    update();
 }
 
 void GameWindow::paintEvent(QPaintEvent *event) {
@@ -188,9 +201,9 @@ void GameWindow::keyPressEvent(QKeyEvent *event) {
     else if (event->key() == Qt::Key_Space){
         qDebug() << "Space";
         if (firerate == 0){
-            Bullet* newBullet = new Bullet(player.getCannon().left() + player.getCannon().width()/2, player.getCannon().top(), 12, bulletColor);
+            Bullet* newBullet = new Bullet(player.getCannon().left() + player.getCannon().width()/2, player.getCannon().top(), BULLET_SPEED, bulletColor);
             bullets.append(newBullet);
-            firerate = 5;
+            firerate = FIRE_RATE;
             laserShootSound->play();
         } else {
             qDebug() << "cannot shoot " << firerate;
@@ -282,7 +295,7 @@ void GameWindow::updateGame() {
                     invader[k]->setSpeed(invader[k]->getSpeed() * 1.01);
                     qDebug() << "Speed : " << invader[k]->getSpeed();
                 }
-                score += 10;
+                score += SCORE_PER_INVADER;
                 explosionInvaderSound->play();
             }
         }

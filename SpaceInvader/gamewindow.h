@@ -3,14 +3,12 @@
 
 #include <QWidget>
 #include <QTimer>
-#include <QKeyEvent>
 #include <QVector>
 #include "player.h"
 #include "bullet.h"
 #include "invader.h"
 #include "winwindow.h"
 #include <QSoundEffect>
-#include <QThread>
 
 class GameWindow : public QWidget
 {
@@ -20,23 +18,20 @@ public:
     explicit GameWindow(QWidget *parent = nullptr);
     ~GameWindow();
 
-    void start();
+    Q_SIGNAL void MainButtonClicked();
+    Q_SIGNAL void WinEvent(int score);
+    Q_SIGNAL void LoseEvent(int score);
 
-signals:
-    void MainButtonClicked();
-    void WinEvent(int score);
-    void LoseEvent(int score);
+    void resetGame();
+
+
+public slots:
+    void start();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
-
-private slots:
-    void updateGame();
-
-public slots:
-    void resetGame();
 
 private:
     QTimer *timer;
@@ -44,25 +39,28 @@ private:
     QVector<Bullet*> bullets;
     QVector<Invader*> invader;
     WinWindow *winWindow;
+    bool leftPressed;
+    bool rightPressed;
+    int score;
+    int firerate;
+    int invaderMoveTimer;
     QColor playerColor;
     QColor bulletColor;
     QColor invaderColor;
-    int score;
-    bool leftPressed;
-    bool rightPressed;
-    int firerate;
-    int invaderMoveTimer;
-    bool hitWall;
     int numberOfInvaders;
-    QColor inverted(const QColor& color);
-    void loadOptionsFromFile();
     QSoundEffect *laserShootSound;
     QSoundEffect *explosionInvaderSound;
     QSoundEffect *explosionPlayerSound;
-    QThread *laserShootThread;
-    QThread *explosionInvaderThread;
-    QThread *explosionPlayerThread;
-    void playSound(QSoundEffect *sound, QThread *thread);
+
+    void loadOptionsFromFile();
+    void clearBulletsAndInvaders();
+    void initializePlayerAndInvaders();
+    void restartTimerIfNotActive();
+    void resetKeyPresses();
+    void resetGameParameters();
+    void initializeSounds();
+    QColor inverted(const QColor& color);
+    void updateGame();
 };
 
 #endif // GAMEWINDOW_H
