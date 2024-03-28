@@ -12,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     menuWindow(new MenuWindow()),
     gameWon(false)
 {
-    createSaveFile();
     setWindowTitle("Main Window");
     setStyleSheet("background-color: lightblue;");
 
@@ -101,26 +100,4 @@ MainWindow::~MainWindow()
     delete titleWindow;
     delete gameWindow;
     delete menuWindow;
-}
-
-void MainWindow::createSaveFile(){
-    QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/options";
-    QDir().mkpath(QFileInfo(filePath).absoluteDir().path());
-    QFile file(filePath);
-    if (file.size() == 0) {
-        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            QTextStream out(&file);
-            out << "ListOfColors:" << Qt::endl;
-            out << "BulletColor:#FFFFFF"  << Qt::endl;
-            out << "InvaderColor:#00FF00" << Qt::endl;
-            out << "ShipColor:#FFFFFF" << Qt::endl;
-            out << "NumberOfInvaders:10" << Qt::endl;
-            file.close();
-            qDebug() << "Base save file created.";
-        } else {
-            qDebug() << "Failed to create base save file.";
-        }
-    } else {
-        qDebug() << "Save file already exists.";
-    }
 }

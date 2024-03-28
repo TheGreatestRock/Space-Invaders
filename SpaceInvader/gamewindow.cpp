@@ -12,14 +12,6 @@
 #include <QNetworkRequest>
 #include <QUrl>
 
-const int PLAYER_SIZE = 5;
-const int INVADER_SIZE = 5;
-const int INVADER_SPACING = 45;
-const int BULLET_SPEED = 12;
-const int FIRE_RATE = 5;
-const int SCORE_PER_INVADER = 10;
-const int UPDATE_INTERVAL = 20;
-
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent), score(0)
 {
     qDebug() << "GameWindow constructor";
@@ -212,20 +204,49 @@ void GameWindow::loadOptionsFromFile() {
                 QString key = fields[0].trimmed();
                 QString value = fields[1].trimmed();
                 if (key == "ShipColor") {
-                    playerColor = QColor(value);
+                    if (value != "")
+                        playerColor = QColor(value);
+                    else
+                        playerColor = Qt::white;
                     qDebug() << "ShipColor: " << value << " converted to: " << playerColor;
                 }
                 else if (key == "BulletColor") {
-                    bulletColor = QColor(value);
+                    if (value != "")
+                        bulletColor = QColor(value);
+                    else
+                        bulletColor = Qt::white;
                     qDebug() << "BulletColor: " << value << " converted to: " << bulletColor;
                 }
                 else if (key == "InvaderColor") {
-                    invaderColor = QColor(value);
+                    if (value != "")
+                        invaderColor = QColor(value);
+                    else
+                        invaderColor = Qt::white;
                     qDebug() << "InvaderColor: " << value << " converted to: " << invaderColor;
                 }
                 else if (key == "NumberOfInvaders") {
                     numberOfInvaders = value.toInt();
                     qDebug() << "NumberOfInvaders: " << value << " converted to: " << numberOfInvaders;
+                }
+                else if (key == "UseBonusOptions") {
+                    if (value == "true") {
+                        line = in.readLine();
+                        if (line.startsWith("InvaderSpacing:")) {
+                            INVADER_SPACING = line.split(":").last().toInt();
+                        }
+                        line = in.readLine();
+                        if (line.startsWith("BulletSpeed:")) {
+                            BULLET_SPEED = line.split(":").last().toInt();
+                        }
+                        line = in.readLine();
+                        if (line.startsWith("FireRate:")) {
+                            FIRE_RATE = line.split(":").last().toInt();
+                        }
+                        line = in.readLine();
+                        if (line.startsWith("UpdateInterval:")) {
+                            UPDATE_INTERVAL = line.split(":").last().toInt();
+                        }
+                    }
                 }
             }
         }

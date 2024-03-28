@@ -20,7 +20,6 @@ private:
     MenuWindow *menuWindow;
     bool gameWon;
 
-    void createSaveFile();
     void goToMenu();
     void goToGame();
     void goToMain();

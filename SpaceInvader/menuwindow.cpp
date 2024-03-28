@@ -1,9 +1,43 @@
-// menuwindow.cpp
 #include "menuwindow.h"
 #include <QGraphicsItem>
+#include "colorpickerwindow.h"
+#include "editorwindow.h"
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QDebug>
+#include <QStandardPaths>
+#include <QDir>
+#include <QFileInfo>
+#include <QTextStream>
+
+#include "menuwindow.h"
+#include <QGraphicsItem>
+#include "colorpickerwindow.h"
+#include "editorwindow.h"
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QDebug>
+#include <QStandardPaths>
+#include <QDir>
+#include <QFileInfo>
+#include <QTextStream>
 
 MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     layout = new QVBoxLayout(this);
+
+    tabWidget = new QTabWidget(this);
+
+    QWidget *normalOptionsTab = new QWidget(this);
+    QWidget *bonusOptionsTab = new QWidget(this);
+
+    normalOptionsTabLayout = new QVBoxLayout(normalOptionsTab);
+    bonusOptionsTabLayout = new QVBoxLayout(bonusOptionsTab);
+
+    normalOptionsTab->setLayout(normalOptionsTabLayout);
+    bonusOptionsTab->setLayout(bonusOptionsTabLayout);
+
+    tabWidget->addTab(normalOptionsTab, "Normal Options");
+    tabWidget->addTab(bonusOptionsTab, "Bonus Options (WIP)");
 
     bulletColorLayout = new QHBoxLayout();
     bulletColorLabel = new QLabel("Bullet Color:", this);
@@ -13,10 +47,10 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     bulletColorLayout->addWidget(colorBulletButton);
     bulletColorLayout->addWidget(bulletEditorButton);
 
-    invaderEditorButton = new QPushButton("Invader Editor", this);
     invaderColorLayout = new QHBoxLayout();
     invaderColorLabel = new QLabel("Invader Color:", this);
     colorInvaderButton = new QPushButton("Change color", this);
+    invaderEditorButton = new QPushButton("Invader Editor", this);
     invaderColorLayout->addWidget(invaderColorLabel);
     invaderColorLayout->addWidget(colorInvaderButton);
     invaderColorLayout->addWidget(invaderEditorButton);
@@ -30,12 +64,68 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     shipColorLayout->addWidget(shipEditorButton);
 
     nbInvaderLayout = new QHBoxLayout();
-    QLabel *nbInvaderLabel = new QLabel("Number of Invader:", this);
+    nbInvaderLabel = new QLabel("Number of Invader:", this);
     nbInvaderSpinBox = new QSpinBox(this);
     nbInvaderSpinBox->setRange(1, 100);
     nbInvaderSpinBox->setValue(5);
     nbInvaderLayout->addWidget(nbInvaderLabel);
     nbInvaderLayout->addWidget(nbInvaderSpinBox);
+
+    invaderSpacingSlider = new QSlider(Qt::Horizontal, this);
+    invaderSpacingSlider->setRange(10, 100);
+    invaderSpacingSlider->setValue(invaderSpacing);
+    invaderSpacingLabel = new QLabel("Invader Spacing:", this);
+    connect(invaderSpacingSlider, &QSlider::valueChanged, this, &MenuWindow::updateInvaderSpacing);
+
+    bulletSpeedSlider = new QSlider(Qt::Horizontal, this);
+    bulletSpeedSlider->setRange(1, 50);
+    bulletSpeedSlider->setValue(bulletSpeed);
+    bulletSpeedLabel = new QLabel("Bullet Speed:", this);
+    connect(bulletSpeedSlider, &QSlider::valueChanged, this, &MenuWindow::updateBulletSpeed);
+
+    fireRateSlider = new QSlider(Qt::Horizontal, this);
+    fireRateSlider->setRange(1, 20);
+    fireRateSlider->setValue(fireRate);
+    fireRateLabel = new QLabel("Fire Rate:", this);
+    connect(fireRateSlider, &QSlider::valueChanged, this, &MenuWindow::updateFireRate);
+
+    updateIntervalSlider = new QSlider(Qt::Horizontal, this);
+    updateIntervalSlider->setRange(1, 100);
+    updateIntervalSlider->setValue(updateInterval);
+    updateIntervalLabel = new QLabel("Update Interval:", this);
+    connect(updateIntervalSlider, &QSlider::valueChanged, this, &MenuWindow::updateUpdateInterval);
+
+    // Resize the sliders
+    invaderSpacingSlider->setMinimumHeight(20);
+    invaderSpacingSlider->setMaximumHeight(20);
+    bulletSpeedSlider->setMinimumHeight(20);
+    bulletSpeedSlider->setMaximumHeight(20);
+    fireRateSlider->setMinimumHeight(20);
+    fireRateSlider->setMaximumHeight(20);
+    updateIntervalSlider->setMinimumHeight(20);
+    updateIntervalSlider->setMaximumHeight(20);
+
+    // Add widgets to the normal options tab layout
+    normalOptionsTabLayout->addLayout(bulletColorLayout);
+    normalOptionsTabLayout->addLayout(invaderColorLayout);
+    normalOptionsTabLayout->addLayout(shipColorLayout);
+    normalOptionsTabLayout->addLayout(nbInvaderLayout);
+
+    // Add widgets to the bonus options tab layout
+    bonusOptionsLayout = new QVBoxLayout();
+    useBonusOptionsCheckBox = new QCheckBox("Use Bonus Options", this);
+    useBonusOptionsCheckBox->setChecked(useBonusOptions);
+    connect(useBonusOptionsCheckBox, &QCheckBox::clicked, this, &MenuWindow::updateUseBonusOptions);
+    bonusOptionsLayout->addWidget(useBonusOptionsCheckBox);
+    bonusOptionsTabLayout->addLayout(bonusOptionsLayout);
+    bonusOptionsTabLayout->addWidget(invaderSpacingLabel);
+    bonusOptionsTabLayout->addWidget(invaderSpacingSlider);
+    bonusOptionsTabLayout->addWidget(bulletSpeedLabel);
+    bonusOptionsTabLayout->addWidget(bulletSpeedSlider);
+    bonusOptionsTabLayout->addWidget(fireRateLabel);
+    bonusOptionsTabLayout->addWidget(fireRateSlider);
+    bonusOptionsTabLayout->addWidget(updateIntervalLabel);
+    bonusOptionsTabLayout->addWidget(updateIntervalSlider);
 
     backgroundButton = new QPushButton("Background (WIP)", this);
     returnButton = new QPushButton("Return to Main", this);
@@ -50,11 +140,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     connect(invaderEditorButton, &QPushButton::clicked, this, &MenuWindow::handleInvaderEditorButtonClicked);
     connect(bulletEditorButton, &QPushButton::clicked, this, &MenuWindow::handleBulletEditorButtonClicked);
 
-
-    layout->addLayout(bulletColorLayout);
-    layout->addLayout(invaderColorLayout);
-    layout->addLayout(shipColorLayout);
-    layout->addLayout(nbInvaderLayout);
+    layout->addWidget(tabWidget);
     layout->addWidget(backgroundButton);
     layout->addWidget(returnButton);
     setLayout(layout);
@@ -64,6 +150,10 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     graphicsScene = new QGraphicsScene(this);
     graphicsView = new QGraphicsView(graphicsScene);
     backgroundPixmapItem = nullptr;
+}
+
+void MenuWindow::toggleBonusOptionsVisibility() {
+
 }
 
 void MenuWindow::handleColorBulletButtonClicked() {
@@ -101,6 +191,38 @@ void MenuWindow::handleDrawingSaved(const QVector<QVector<bool>>& grid)
         }
     }
 }
+
+
+void MenuWindow::updateInvaderSpacing(int value) {
+    invaderSpacing = value;
+    invaderSpacingLabel->setText("Invader Spacing: " + QString::number(value));
+    saveOptionsToFile();
+}
+
+void MenuWindow::updateBulletSpeed(int value) {
+    bulletSpeed = value;
+    bulletSpeedLabel->setText("Bullet Speed: " + QString::number(value));
+    saveOptionsToFile();
+}
+
+void MenuWindow::updateFireRate(int value) {
+    fireRate = value;
+    fireRateLabel->setText("Fire Rate: " + QString::number(value));
+    saveOptionsToFile();
+}
+
+void MenuWindow::updateUpdateInterval(int value) {
+    updateInterval = value;
+    updateIntervalLabel->setText("Update Interval: " + QString::number(value));
+    saveOptionsToFile();
+}
+
+void MenuWindow::updateUseBonusOptions(bool checked) {
+    useBonusOptions = checked;
+    saveOptionsToFile();
+}
+
+
 
 void MenuWindow::handleNbInvaderValueChanged(int value) {
     saveOptionsToFile();
@@ -165,6 +287,11 @@ void MenuWindow::saveOptionsToFile() {
         out << "InvaderColor:" << colorInvaderButton->styleSheet().split(":").last().trimmed() << Qt::endl;
         out << "ShipColor:" << colorShipButton->styleSheet().split(":").last().trimmed() << Qt::endl;
         out << "NumberOfInvaders:" << nbInvaderSpinBox->value() << Qt::endl;
+        out << "UseBonusOptions:" << useBonusOptions << Qt::endl;
+        out << "InvaderSpacing:" << invaderSpacing << Qt::endl;
+        out << "BulletSpeed:" << bulletSpeed << Qt::endl;
+        out << "FireRate:" << fireRate << Qt::endl;
+        out << "UpdateInterval:" << updateInterval << Qt::endl;
         file.close();
     } else {
         qDebug() << "Failed to open option file for writing.";
@@ -199,6 +326,31 @@ void MenuWindow::loadOptionsFromFile() {
         line = in.readLine();
         if (line.startsWith("NumberOfInvaders:")) {
             nbInvaderSpinBox->setValue(line.split(":").last().toInt());
+        }
+        line = in.readLine();
+        if (line.startsWith("UseBonusOptions:")) {
+            useBonusOptions = line.split(":").last().toInt();
+            useBonusOptionsCheckBox->setChecked(useBonusOptions);
+        }
+        line = in.readLine();
+        if (line.startsWith("InvaderSpacing:")) {
+            invaderSpacing = line.split(":").last().toInt();
+            invaderSpacingSlider->setValue(invaderSpacing);
+        }
+        line = in.readLine();
+        if (line.startsWith("BulletSpeed:")) {
+            bulletSpeed = line.split(":").last().toInt();
+            bulletSpeedSlider->setValue(bulletSpeed);
+        }
+        line = in.readLine();
+        if (line.startsWith("FireRate:")) {
+            fireRate = line.split(":").last().toInt();
+            fireRateSlider->setValue(fireRate);
+        }
+        line = in.readLine();
+        if (line.startsWith("UpdateInterval:")) {
+            updateInterval = line.split(":").last().toInt();
+            updateIntervalSlider->setValue(updateInterval);
         }
         file.close();
     } else {

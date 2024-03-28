@@ -17,6 +17,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QDebug>
+#include <QCheckBox>
 #include "colorpickerwindow.h"
 #include "editorwindow.h"
 
@@ -38,12 +39,15 @@ private slots:
     void handleShipEditorButtonClicked();
     void handleInvaderEditorButtonClicked();
     void handleBulletEditorButtonClicked();
-    void handleBackgroundButtonClicked();
-    void returnToMain();
     void handleNbInvaderValueChanged(int value);
+    void handleBackgroundButtonClicked();
+    void handleDrawingSaved(const QVector<QVector<bool>>& grid);
+    void openColorPickerWindow(QPushButton *button);
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
-    void handleDrawingSaved(const QVector<QVector<bool>>& grid);
+    void saveOptionsToFile();
+    void loadOptionsFromFile();
+    void returnToMain();
 
 private:
     QVBoxLayout *layout;
@@ -60,19 +64,43 @@ private:
     QPushButton *colorShipButton;
     QPushButton *shipEditorButton;
     QHBoxLayout *nbInvaderLayout;
+    QLabel *nbInvaderLabel;
     QSpinBox *nbInvaderSpinBox;
+    QVBoxLayout *bonusOptionsLayout;
+    QLabel *bonusOptionsLabel;
+    QHBoxLayout *bonusOptionsOptionsLayout;
     QPushButton *backgroundButton;
     QPushButton *returnButton;
     QGraphicsScene *graphicsScene;
     QGraphicsView *graphicsView;
     QGraphicsPixmapItem *backgroundPixmapItem;
-
     QVector<QColor> colors;
+    QSlider* invaderSpacingSlider;
+    QSlider* bulletSpeedSlider;
+    QSlider* fireRateSlider;
+    QSlider* updateIntervalSlider;
+    QCheckBox* useBonusOptionsCheckBox;
+    QLabel *invaderSpacingLabel;
+    QLabel *bulletSpeedLabel;
+    QLabel *fireRateLabel;
+    QLabel *updateIntervalLabel;
+    QLabel *bonusOptionsToggleLabel;
+    QTabWidget *tabWidget;
+    QVBoxLayout *normalOptionsTabLayout;
+    QVBoxLayout *bonusOptionsTabLayout;
 
-    void openColorPickerWindow(QPushButton *button);
+    void toggleBonusOptionsVisibility();
     void openEditorWindow(const QString& type);
-    void saveOptionsToFile();
-    void loadOptionsFromFile();
+    void updateInvaderSpacing(int value);
+    int invaderSpacing;
+    void updateBulletSpeed(int value);
+    int bulletSpeed;
+    void updateFireRate(int value);
+    int fireRate;
+    void updateUpdateInterval(int value);
+    int updateInterval;
+    void updateUseBonusOptions(bool checked);
+    bool useBonusOptions;
 };
 
 #endif // MENUWINDOW_H

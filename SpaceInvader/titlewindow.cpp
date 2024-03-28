@@ -21,13 +21,15 @@ TitleWindow::TitleWindow(QWidget *parent)
     QFont highScoreLabelFont("Arial", 16);
     ui.highScoreLabel->setFont(highScoreLabelFont);
 
-    // Set font for the buttons
+    QFont highScoreValueFont("Arial", 16);
+    ui.highScoreValue->setFont(highScoreValueFont);
+
     QFont buttonFont("Arial", 14);
     ui.playButton->setFont(buttonFont);
     ui.menuButton->setFont(buttonFont);
     ui.exitButton->setFont(buttonFont);
 
-    // Connect button signals to slots
+
     connect(ui.playButton, &QPushButton::clicked, this, &TitleWindow::handlePlayButtonClicked);
     connect(ui.menuButton, &QPushButton::clicked, this, &TitleWindow::handleMenuButtonClicked);
     connect(ui.exitButton, &QPushButton::clicked, this, &TitleWindow::handleExitButtonClicked);
