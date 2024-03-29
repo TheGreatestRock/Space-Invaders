@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     setStyleSheet("background-color: lightblue;");
 
     setMinimumSize(800, 600);
+    setMaximumSize(800, 600);
 
     connect(titleWindow, &TitleWindow::playButtonClicked, this, &MainWindow::handlePlayButtonClicked);
     connect(titleWindow, &TitleWindow::menuButtonClicked, this, &MainWindow::handleOptionsButtonClicked);

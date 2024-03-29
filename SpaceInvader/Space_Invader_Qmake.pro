@@ -9,6 +9,10 @@ TEMPLATE = app
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
+QT += network
+DEPENDPATH += .
+INCLUDEPATH += .
+
 SOURCES += \
         main.cpp \
         gamewindow.cpp \

@@ -75,7 +75,7 @@ private:
     int INVADER_SIZE = 5;
     int INVADER_SPACING = 45;
     int BULLET_SPEED = 12;
-    int FIRE_RATE = 5;
+    int FIRE_RATE = 10;
     int SCORE_PER_INVADER = 10;
     int UPDATE_INTERVAL = 20;
     int INVADER_SHOOT_INTERVAL = 2000;

@@ -10,18 +10,6 @@
 #include <QFileInfo>
 #include <QTextStream>
 
-#include "menuwindow.h"
-#include <QGraphicsItem>
-#include "colorpickerwindow.h"
-#include "editorwindow.h"
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QDebug>
-#include <QStandardPaths>
-#include <QDir>
-#include <QFileInfo>
-#include <QTextStream>
-
 MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     layout = new QVBoxLayout(this);
 
@@ -48,7 +36,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     bulletColorLayout->addWidget(bulletEditorButton);
 
     powerupColorLayout = new QHBoxLayout();
-    powerupColorLabel = new QLabel("Powerup Color:", this);
+    powerupColorLabel = new QLabel("Powerup Color (WIP): ", this);
     colorPowerupButton = new QPushButton("Change color", this);
     powerupEditorButton = new QPushButton("Powerup Editor", this);
     powerupColorLayout->addWidget(powerupColorLabel);
