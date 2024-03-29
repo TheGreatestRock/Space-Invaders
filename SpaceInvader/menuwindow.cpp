@@ -141,11 +141,13 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
 
     connect(colorBulletButton, &QPushButton::clicked, this, &MenuWindow::handleColorBulletButtonClicked);
     connect(colorInvaderButton, &QPushButton::clicked, this, &MenuWindow::handleColorInvaderButtonClicked);
+    connect(colorPowerupButton, &QPushButton::clicked, this, &MenuWindow::handleColorPowerupButtonClicked);
     connect(colorShipButton, &QPushButton::clicked, this, &MenuWindow::handleColorShipButtonClicked);
     connect(nbInvaderSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MenuWindow::handleNbInvaderValueChanged);
     connect(returnButton, &QPushButton::clicked, this, &MenuWindow::returnToMain);
     connect(backgroundButton, &QPushButton::clicked, this, &MenuWindow::handleBackgroundButtonClicked);
     connect(shipEditorButton, &QPushButton::clicked, this, &MenuWindow::handleShipEditorButtonClicked);
+    connect(powerupEditorButton, &QPushButton::clicked, this, &MenuWindow::handlePowerUpEditorButtonClicked);
     connect(invaderEditorButton, &QPushButton::clicked, this, &MenuWindow::handleInvaderEditorButtonClicked);
     connect(bulletEditorButton, &QPushButton::clicked, this, &MenuWindow::handleBulletEditorButtonClicked);
 
@@ -177,6 +179,10 @@ void MenuWindow::handleColorShipButtonClicked() {
     openColorPickerWindow(colorShipButton);
 }
 
+void MenuWindow::handleColorPowerupButtonClicked() {
+    openColorPickerWindow(colorPowerupButton);
+}
+
 void MenuWindow::handleShipEditorButtonClicked() {
     openEditorWindow("Ship");
 }
@@ -189,7 +195,7 @@ void MenuWindow::handleBulletEditorButtonClicked() {
     openEditorWindow("Bullet");
 }
 
-void MenuWindow::handlePowerEditorUpButtonClicked(){
+void MenuWindow::handlePowerUpEditorButtonClicked(){
     openEditorWindow("Powerup");
 }
 

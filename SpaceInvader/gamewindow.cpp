@@ -47,10 +47,11 @@ void GameWindow::checkSaveFiles() {
         qDebug() << "Creating save files";
         if (file.open(QIODevice::WriteOnly)) {
             QTextStream out(&file);
-            out << "ListOfColors: #ffffff\n";
-            out << "ShipColor: #ffffff\n";
-            out << "BulletColor: #ffffff\n";
-            out << "InvaderColor: #ffffff\n";
+            out << "ListOfColors:#ffffff\n";
+            out << "ShipColor:#ffffff\n";
+            out << "BulletColor:#ffffff\n";
+            out << "InvaderColor:#ffffff\n";
+            out << "PowerupColor:#ffffff\n";
             out << "NumberOfInvaders: 50\n";
             file.close();
         }
@@ -227,6 +228,13 @@ void GameWindow::loadOptionsFromFile() {
                     else
                         invaderColor = Qt::white;
                     qDebug() << "InvaderColor: " << value << " converted to: " << invaderColor;
+                }
+                else if (key == "PowerupColor") {
+                    if (value != "")
+                        invaderColor = QColor(value);
+                    else
+                        invaderColor = Qt::white;
+                    qDebug() << "PowerupColor: " << value << " converted to: " << invaderColor;
                 }
                 else if (key == "NumberOfInvaders") {
                     numberOfInvaders = value.toInt();
@@ -418,6 +426,8 @@ void GameWindow::keyPressEvent(QKeyEvent *event) {
         }
     }
     if (event->key() == Qt::Key_Escape) {
+        timer->stop();
+        invaderShootTimer->stop();
         emit MainButtonClicked();
         qDebug() << "Escape";
     }

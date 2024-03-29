@@ -38,7 +38,8 @@ private slots:
     void handleColorShipButtonClicked();
     void handleShipEditorButtonClicked();
     void handleInvaderEditorButtonClicked();
-    void handlePowerEditorUpButtonClicked();
+    void handlePowerUpEditorButtonClicked();
+    void handleColorPowerupButtonClicked();
     void handleBulletEditorButtonClicked();
     void handleNbInvaderValueChanged(int value);
     void handleBackgroundButtonClicked();

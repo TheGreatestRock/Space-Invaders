@@ -1650,6 +1650,7 @@ debug/gamewindow.o: ../SpaceInvader/gamewindow.cpp ../SpaceInvader/gamewindow.h 
 		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
 		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMetaType \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qrandom.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPainter \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpainter.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
