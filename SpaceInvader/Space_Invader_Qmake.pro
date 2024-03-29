@@ -18,6 +18,7 @@ SOURCES += \
         mainwindow.cpp \
         colorpickerwindow.cpp \
         menuwindow.cpp \
+        powerup.cpp \
         titlewindow.cpp \
         winwindow.cpp \
         editorwindow.cpp
@@ -30,6 +31,7 @@ HEADERS += \
         mainwindow.h \
         colorpickerwindow.h \
         menuwindow.h \
+        powerup.h \
         titlewindow.h \
         winwindow.h \
         editorwindow.h

@@ -1,4 +1,5 @@
 #include "gamewindow.h"
+#include "qrandom.h"
 #include <QPainter>
 #include <QDebug>
 #include <QStandardPaths>
@@ -23,7 +24,9 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent), score(0)
     connect(timer, &QTimer::timeout, this, &GameWindow::updateGame);
     connect(this, &GameWindow::WinEvent, winWindow, &WinWindow::setScore);
     connect(this, &GameWindow::LoseEvent, winWindow, &WinWindow::setScore);
-    timer->start(UPDATE_INTERVAL); // Update game every 20 milliseconds
+    connect(invaderShootTimer, &QTimer::timeout, this, &GameWindow::handleInvaderShoot);
+    timer->start(UPDATE_INTERVAL);
+    invaderShootTimer->start(INVADER_SHOOT_INTERVAL);    // Update game every 20 milliseconds
     qDebug() << timer->isActive();
     timer->stop();
     leftPressed = false;
@@ -257,6 +260,18 @@ void GameWindow::loadOptionsFromFile() {
     }
 }
 
+void GameWindow::handleInvaderShoot() {
+    if (!invader.isEmpty()) {
+        // Select a random invader
+        int index = (new QRandomGenerator(QDateTime::currentMSecsSinceEpoch()))->bounded(invader.size());
+        Invader* invad = invader.at(index);
+
+        // Create a new bullet at the invader's position
+        Bullet* newBullet = new Bullet(invad->getRect().left() + invad->getRect().width()/2, invad->getRect().bottom(), BULLET_SPEED, bulletColor, false, false);
+        bullets.append(newBullet);
+    }
+}
+
 void GameWindow::resetGame() {
     loadOptionsFromFile();
     clearBulletsAndInvaders();
@@ -342,20 +357,21 @@ void GameWindow::paintEvent(QPaintEvent *event) {
     }
 
     // Draw bullets
-    for (Bullet* bullet : bullets) {
+    for (Bullet* bullet : qAsConst(bullets)) {
         painter.setBrush(bullet->getColor());
         QVector<QVector<int>> bulletPattern = bullet->getPattern();
         for (int i = 0; i < bulletPattern.size(); ++i) {
             for (int j = 0; j < bulletPattern.at(i).size(); ++j) {
                 if (bulletPattern.at(i).at(j) == 1) {
-                    painter.drawRect(bullet->getRect().left() + j, bullet->getRect().top() + i * 2, 2, 2);
+                    int yPosition = bullet->getRect().top() + (!bullet->getIsShipBullet() ? bulletPattern.size() - 1 - i : i) * 2;
+                    painter.drawRect(bullet->getRect().left() + j, yPosition, 2, 2);
                 }
             }
         }
     }
 
     // Draw invaders
-    for (Invader* invad : invader) {
+    for (Invader* invad : qAsConst(invader)) {
         QVector<QVector<int>> pattern = invad->getPattern();
         //pattern is for 1 invader and each 1 is a pixel of the color of the invader, each pixel is 4x4
         for (int i = 0; i < pattern.size(); ++i) {
@@ -390,7 +406,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event) {
     else if (event->key() == Qt::Key_Space){
         qDebug() << "Space";
         if (firerate == 0){
-            Bullet* newBullet = new Bullet(player->getCannon().left() + player->getCannon().width()/2, player->getCannon().top(), BULLET_SPEED, bulletColor);
+            Bullet* newBullet = new Bullet(player->getCannon().left() + player->getCannon().width()/2, player->getCannon().top(), BULLET_SPEED, bulletColor, true, false);
             bullets.append(newBullet);
             firerate = FIRE_RATE;
             laserShootSound->play();
@@ -470,6 +486,9 @@ void GameWindow::updateGame() {
                 qDebug() << "Index out of range in bullet/invader collision check";
                 break; // Break out of inner loop
             }
+            if (!bullets.at(i)->getIsShipBullet()) {
+                continue;
+            }
             if (bullets.at(i)->getRect().intersects(invader.at(j)->getRect())) {
                 delete bullets.at(i);
                 bullets.removeAt(i);
@@ -487,6 +506,17 @@ void GameWindow::updateGame() {
                 score += SCORE_PER_INVADER;
                 explosionInvaderSound->play();
             }
+        }
+    }
+
+    // Check bullet/player(ship) collision
+    for (int i = 0; i < bullets.size(); ++i) {
+        if (bullets.at(i)->getRect().intersects(player->getRect()) && !bullets.at(i)->getIsShipBullet()) {
+            winWindow->setWin(false);
+            emit LoseEvent(score);
+            timer->stop();
+            winWindow->show();
+            explosionPlayerSound->play();
         }
     }
 
@@ -519,10 +549,10 @@ void GameWindow::start() {
 
 GameWindow::~GameWindow() {
     delete timer;
-    for (Bullet* bullet : bullets) {
+    for (Bullet* bullet : qAsConst(bullets)) {
         delete bullet;
     }
-    for (Invader* inv : invader) {
+    for (Invader* inv : qAsConst(invader)) {
         delete inv;
     }
     delete laserShootSound;

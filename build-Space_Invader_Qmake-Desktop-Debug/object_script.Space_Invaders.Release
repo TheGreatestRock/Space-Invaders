@@ -6,6 +6,7 @@ release/invader.o
 release/mainwindow.o
 release/colorpickerwindow.o
 release/menuwindow.o
+release/powerup.o
 release/titlewindow.o
 release/winwindow.o
 release/editorwindow.o

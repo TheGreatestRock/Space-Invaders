@@ -36,6 +36,8 @@ protected:
 
 private:
     QTimer *timer;
+    QTimer* invaderShootTimer = new QTimer(this);
+
     Player *player;
     QVector<Bullet*> bullets;
     QVector<Invader*> invader;
@@ -66,6 +68,7 @@ private:
     void checkSaveFiles();
 
     void handleDownloadFinished(QNetworkReply* reply);
+    void handleInvaderShoot();
 
     int PLAYER_SIZE = 5;
     int INVADER_SIZE = 5;
@@ -74,6 +77,8 @@ private:
     int FIRE_RATE = 5;
     int SCORE_PER_INVADER = 10;
     int UPDATE_INTERVAL = 20;
+    int INVADER_SHOOT_INTERVAL = 2000;
+
 };
 
 #endif // GAMEWINDOW_H

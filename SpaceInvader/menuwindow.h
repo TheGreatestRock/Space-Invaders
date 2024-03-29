@@ -88,6 +88,10 @@ private:
     QTabWidget *tabWidget;
     QVBoxLayout *normalOptionsTabLayout;
     QVBoxLayout *bonusOptionsTabLayout;
+    QPushButton *powerupEditorButton;
+    QPushButton *colorPowerupButton;
+    QLabel *powerupColorLabel;
+    QHBoxLayout *powerupColorLayout;
 
     void toggleBonusOptionsVisibility();
     void openEditorWindow(const QString& type);

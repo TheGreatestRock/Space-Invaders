@@ -35,17 +35,13 @@ TitleWindow::TitleWindow(QWidget *parent)
     connect(ui.exitButton, &QPushButton::clicked, this, &TitleWindow::handleExitButtonClicked);
 
     // Display high score
-    int highscore = getHighscore();
-    if (highscore == 0) {
-        ui.highScoreValue->setText("No highscore yet");
-    } else {
-        ui.highScoreValue->setText(QString::number(highscore));
-    }
+    getHighscore();
 }
 
 void TitleWindow::setGameWon(bool won)
 {
     gameWon = won;
+    getHighscore();
     if (gameWon) {
         ui.playButton->setText("Play again");
     }
@@ -88,5 +84,10 @@ int TitleWindow::getHighscore(){
         }
     }
     file.close();
+    if (highscore == 0) {
+        ui.highScoreValue->setText("No highscore yet");
+    } else {
+        ui.highScoreValue->setText(QString::number(highscore));
+    }
     return highscore;
 }

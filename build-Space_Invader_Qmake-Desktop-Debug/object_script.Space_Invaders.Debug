@@ -6,6 +6,7 @@ debug/invader.o
 debug/mainwindow.o
 debug/colorpickerwindow.o
 debug/menuwindow.o
+debug/powerup.o
 debug/titlewindow.o
 debug/winwindow.o
 debug/editorwindow.o

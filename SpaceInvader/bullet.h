@@ -1,28 +1,38 @@
-// Bullet.h
 #ifndef BULLET_H
 #define BULLET_H
 
 #include <QRect>
 #include <QColor>
-#include <QString>
 #include <QVector>
+#include <QString>
+#include <QDebug>
+#include <QStandardPaths>
+#include <QFile>
+#include <QTextStream>
 
 class Bullet {
+private:
+    int speed;
+    QColor color;
+    QRect rect;
+    QVector<QVector<int>> pattern;
+    bool isFromShip;
+    bool isPowerUp;
+
 public:
-    Bullet(int x, int y, int speed, QColor color);
+    Bullet(int x, int y, int speed, QColor color, bool isFromShip, bool isPowerUp);
+
     QRect getRect() const;
     QColor getColor() const;
     void setColor(const QColor &color);
     void move();
     void setPos(int x, int y);
-    bool needMove();
-    QVector<QVector<int>> getPattern() const; // Added function to retrieve pattern
-
-private:
-    QRect rect;
-    int speed;
-    QColor color;
-    QVector<QVector<int>> pattern;
+    bool needMove() const;
+    QVector<QVector<int>> getPattern() const;
+    bool getIsPowerUp() const;
+    void setIsPowerUp(bool value);
+    bool getIsShipBullet() const;
+    void setIsShipBullet(bool value);
 };
 
 #endif // BULLET_H

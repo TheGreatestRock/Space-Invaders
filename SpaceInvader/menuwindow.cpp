@@ -47,6 +47,14 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
     bulletColorLayout->addWidget(colorBulletButton);
     bulletColorLayout->addWidget(bulletEditorButton);
 
+    powerupColorLayout = new QHBoxLayout();
+    powerupColorLabel = new QLabel("Powerup Color:", this);
+    colorPowerupButton = new QPushButton("Change color", this);
+    powerupEditorButton = new QPushButton("Powerup Editor", this);
+    powerupColorLayout->addWidget(powerupColorLabel);
+    powerupColorLayout->addWidget(colorPowerupButton);
+    powerupColorLayout->addWidget(powerupEditorButton);
+
     invaderColorLayout = new QHBoxLayout();
     invaderColorLabel = new QLabel("Invader Color:", this);
     colorInvaderButton = new QPushButton("Change color", this);
@@ -107,6 +115,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent) {
 
     // Add widgets to the normal options tab layout
     normalOptionsTabLayout->addLayout(bulletColorLayout);
+    normalOptionsTabLayout->addLayout(powerupColorLayout);
     normalOptionsTabLayout->addLayout(invaderColorLayout);
     normalOptionsTabLayout->addLayout(shipColorLayout);
     normalOptionsTabLayout->addLayout(nbInvaderLayout);
