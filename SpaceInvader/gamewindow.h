@@ -50,6 +50,7 @@ private:
     QColor playerColor;
     QColor bulletColor;
     QColor invaderColor;
+    QColor powerupColor;
     int numberOfInvaders;
     QSoundEffect *laserShootSound;
     QSoundEffect *explosionInvaderSound;

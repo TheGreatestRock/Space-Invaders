@@ -166,7 +166,7 @@ void GameWindow::checkSaveFiles() {
     // Download sound files from GitHub repository
     qDebug() << "Downloading sound files";
     QStringList soundFiles = {"/Laser_Shoot.wav", "/Explosion.wav", "/Explosion2.wav"};
-    QString githubRepoUrl = "https://raw.githubusercontent.com/TheGreatestRock/Space-Invaders/main/SpaceInvader/sfx";
+    QString githubRepoUrl = "https://raw.githubusercontent.com/TheGreatestRock/Space-Invaders/main/sfx";
     for (const QString& soundFile : soundFiles) {
         QString fileUrl = githubRepoUrl + soundFile;
         QUrl url(fileUrl);
@@ -231,9 +231,9 @@ void GameWindow::loadOptionsFromFile() {
                 }
                 else if (key == "PowerupColor") {
                     if (value != "")
-                        invaderColor = QColor(value);
+                        powerupColor = QColor(value);
                     else
-                        invaderColor = Qt::white;
+                        powerupColor = Qt::white;
                     qDebug() << "PowerupColor: " << value << " converted to: " << invaderColor;
                 }
                 else if (key == "NumberOfInvaders") {
