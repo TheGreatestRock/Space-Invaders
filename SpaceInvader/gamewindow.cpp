@@ -26,7 +26,7 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent), score(0)
     connect(this, &GameWindow::LoseEvent, winWindow, &WinWindow::setScore);
     connect(invaderShootTimer, &QTimer::timeout, this, &GameWindow::handleInvaderShoot);
     timer->start(UPDATE_INTERVAL);
-    invaderShootTimer->start(INVADER_SHOOT_INTERVAL);    // Update game every 20 milliseconds
+    invaderShootTimer->start(INVADER_SHOOT_INTERVAL);
     qDebug() << timer->isActive();
     timer->stop();
     leftPressed = false;

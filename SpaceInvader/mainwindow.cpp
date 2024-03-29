@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(titleWindow, &TitleWindow::exitButtonClicked, this, &MainWindow::handleExitButtonClicked);
     connect(gameWindow, &GameWindow::MainButtonClicked, this, &MainWindow::handleMainButtonClicked);
     connect(gameWindow, &GameWindow::WinEvent, this, &MainWindow::handleWin);
+    connect(gameWindow, &GameWindow::LoseEvent, this, &MainWindow::handleWin);
     connect(menuWindow, &MenuWindow::MainButtonClicked, this, &MainWindow::handleMainButtonClicked);
 
     // Initially, only the title window should be shown
