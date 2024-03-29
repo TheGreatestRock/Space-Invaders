@@ -23,8 +23,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MenuWindow_t {
-    QByteArrayData data[25];
-    char stringdata0[469];
+    QByteArrayData data[26];
+    char stringdata0[502];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,23 +41,24 @@ QT_MOC_LITERAL(4, 61, 31), // "handleColorInvaderButtonClicked"
 QT_MOC_LITERAL(5, 93, 28), // "handleColorShipButtonClicked"
 QT_MOC_LITERAL(6, 122, 29), // "handleShipEditorButtonClicked"
 QT_MOC_LITERAL(7, 152, 32), // "handleInvaderEditorButtonClicked"
-QT_MOC_LITERAL(8, 185, 31), // "handleBulletEditorButtonClicked"
-QT_MOC_LITERAL(9, 217, 27), // "handleNbInvaderValueChanged"
-QT_MOC_LITERAL(10, 245, 5), // "value"
-QT_MOC_LITERAL(11, 251, 29), // "handleBackgroundButtonClicked"
-QT_MOC_LITERAL(12, 281, 18), // "handleDrawingSaved"
-QT_MOC_LITERAL(13, 300, 23), // "QVector<QVector<bool> >"
-QT_MOC_LITERAL(14, 324, 4), // "grid"
-QT_MOC_LITERAL(15, 329, 21), // "openColorPickerWindow"
-QT_MOC_LITERAL(16, 351, 12), // "QPushButton*"
-QT_MOC_LITERAL(17, 364, 6), // "button"
-QT_MOC_LITERAL(18, 371, 13), // "keyPressEvent"
-QT_MOC_LITERAL(19, 385, 10), // "QKeyEvent*"
-QT_MOC_LITERAL(20, 396, 5), // "event"
-QT_MOC_LITERAL(21, 402, 15), // "keyReleaseEvent"
-QT_MOC_LITERAL(22, 418, 17), // "saveOptionsToFile"
-QT_MOC_LITERAL(23, 436, 19), // "loadOptionsFromFile"
-QT_MOC_LITERAL(24, 456, 12) // "returnToMain"
+QT_MOC_LITERAL(8, 185, 32), // "handlePowerEditorUpButtonClicked"
+QT_MOC_LITERAL(9, 218, 31), // "handleBulletEditorButtonClicked"
+QT_MOC_LITERAL(10, 250, 27), // "handleNbInvaderValueChanged"
+QT_MOC_LITERAL(11, 278, 5), // "value"
+QT_MOC_LITERAL(12, 284, 29), // "handleBackgroundButtonClicked"
+QT_MOC_LITERAL(13, 314, 18), // "handleDrawingSaved"
+QT_MOC_LITERAL(14, 333, 23), // "QVector<QVector<bool> >"
+QT_MOC_LITERAL(15, 357, 4), // "grid"
+QT_MOC_LITERAL(16, 362, 21), // "openColorPickerWindow"
+QT_MOC_LITERAL(17, 384, 12), // "QPushButton*"
+QT_MOC_LITERAL(18, 397, 6), // "button"
+QT_MOC_LITERAL(19, 404, 13), // "keyPressEvent"
+QT_MOC_LITERAL(20, 418, 10), // "QKeyEvent*"
+QT_MOC_LITERAL(21, 429, 5), // "event"
+QT_MOC_LITERAL(22, 435, 15), // "keyReleaseEvent"
+QT_MOC_LITERAL(23, 451, 17), // "saveOptionsToFile"
+QT_MOC_LITERAL(24, 469, 19), // "loadOptionsFromFile"
+QT_MOC_LITERAL(25, 489, 12) // "returnToMain"
 
     },
     "MenuWindow\0MainButtonClicked\0\0"
@@ -66,6 +67,7 @@ QT_MOC_LITERAL(24, 456, 12) // "returnToMain"
     "handleColorShipButtonClicked\0"
     "handleShipEditorButtonClicked\0"
     "handleInvaderEditorButtonClicked\0"
+    "handlePowerEditorUpButtonClicked\0"
     "handleBulletEditorButtonClicked\0"
     "handleNbInvaderValueChanged\0value\0"
     "handleBackgroundButtonClicked\0"
@@ -83,7 +85,7 @@ static const uint qt_meta_data_MenuWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -91,24 +93,25 @@ static const uint qt_meta_data_MenuWindow[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   94,    2, 0x06 /* Public */,
+       1,    0,   99,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   95,    2, 0x08 /* Private */,
-       4,    0,   96,    2, 0x08 /* Private */,
-       5,    0,   97,    2, 0x08 /* Private */,
-       6,    0,   98,    2, 0x08 /* Private */,
-       7,    0,   99,    2, 0x08 /* Private */,
-       8,    0,  100,    2, 0x08 /* Private */,
-       9,    1,  101,    2, 0x08 /* Private */,
-      11,    0,  104,    2, 0x08 /* Private */,
-      12,    1,  105,    2, 0x08 /* Private */,
-      15,    1,  108,    2, 0x08 /* Private */,
-      18,    1,  111,    2, 0x08 /* Private */,
-      21,    1,  114,    2, 0x08 /* Private */,
-      22,    0,  117,    2, 0x08 /* Private */,
-      23,    0,  118,    2, 0x08 /* Private */,
-      24,    0,  119,    2, 0x08 /* Private */,
+       3,    0,  100,    2, 0x08 /* Private */,
+       4,    0,  101,    2, 0x08 /* Private */,
+       5,    0,  102,    2, 0x08 /* Private */,
+       6,    0,  103,    2, 0x08 /* Private */,
+       7,    0,  104,    2, 0x08 /* Private */,
+       8,    0,  105,    2, 0x08 /* Private */,
+       9,    0,  106,    2, 0x08 /* Private */,
+      10,    1,  107,    2, 0x08 /* Private */,
+      12,    0,  110,    2, 0x08 /* Private */,
+      13,    1,  111,    2, 0x08 /* Private */,
+      16,    1,  114,    2, 0x08 /* Private */,
+      19,    1,  117,    2, 0x08 /* Private */,
+      22,    1,  120,    2, 0x08 /* Private */,
+      23,    0,  123,    2, 0x08 /* Private */,
+      24,    0,  124,    2, 0x08 /* Private */,
+      25,    0,  125,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -120,12 +123,13 @@ static const uint qt_meta_data_MenuWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   10,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 13,   14,
-    QMetaType::Void, 0x80000000 | 16,   17,
-    QMetaType::Void, 0x80000000 | 19,   20,
-    QMetaType::Void, 0x80000000 | 19,   20,
+    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 14,   15,
+    QMetaType::Void, 0x80000000 | 17,   18,
+    QMetaType::Void, 0x80000000 | 20,   21,
+    QMetaType::Void, 0x80000000 | 20,   21,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -145,29 +149,30 @@ void MenuWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->handleColorShipButtonClicked(); break;
         case 4: _t->handleShipEditorButtonClicked(); break;
         case 5: _t->handleInvaderEditorButtonClicked(); break;
-        case 6: _t->handleBulletEditorButtonClicked(); break;
-        case 7: _t->handleNbInvaderValueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 8: _t->handleBackgroundButtonClicked(); break;
-        case 9: _t->handleDrawingSaved((*reinterpret_cast< const QVector<QVector<bool> >(*)>(_a[1]))); break;
-        case 10: _t->openColorPickerWindow((*reinterpret_cast< QPushButton*(*)>(_a[1]))); break;
-        case 11: _t->keyPressEvent((*reinterpret_cast< QKeyEvent*(*)>(_a[1]))); break;
-        case 12: _t->keyReleaseEvent((*reinterpret_cast< QKeyEvent*(*)>(_a[1]))); break;
-        case 13: _t->saveOptionsToFile(); break;
-        case 14: _t->loadOptionsFromFile(); break;
-        case 15: _t->returnToMain(); break;
+        case 6: _t->handlePowerEditorUpButtonClicked(); break;
+        case 7: _t->handleBulletEditorButtonClicked(); break;
+        case 8: _t->handleNbInvaderValueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->handleBackgroundButtonClicked(); break;
+        case 10: _t->handleDrawingSaved((*reinterpret_cast< const QVector<QVector<bool> >(*)>(_a[1]))); break;
+        case 11: _t->openColorPickerWindow((*reinterpret_cast< QPushButton*(*)>(_a[1]))); break;
+        case 12: _t->keyPressEvent((*reinterpret_cast< QKeyEvent*(*)>(_a[1]))); break;
+        case 13: _t->keyReleaseEvent((*reinterpret_cast< QKeyEvent*(*)>(_a[1]))); break;
+        case 14: _t->saveOptionsToFile(); break;
+        case 15: _t->loadOptionsFromFile(); break;
+        case 16: _t->returnToMain(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 9:
+        case 10:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<QVector<bool> > >(); break;
             }
             break;
-        case 10:
+        case 11:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
@@ -216,13 +221,13 @@ int MenuWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 17;
     }
     return _id;
 }

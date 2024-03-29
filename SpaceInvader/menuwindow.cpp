@@ -189,6 +189,10 @@ void MenuWindow::handleBulletEditorButtonClicked() {
     openEditorWindow("Bullet");
 }
 
+void MenuWindow::handlePowerEditorUpButtonClicked(){
+    openEditorWindow("Powerup");
+}
+
 void MenuWindow::handleDrawingSaved(const QVector<QVector<bool>>& grid)
 {
     qDebug() << "Drawing saved";
@@ -295,6 +299,7 @@ void MenuWindow::saveOptionsToFile() {
         out << "BulletColor:" << colorBulletButton->styleSheet().split(":").last().trimmed() << Qt::endl;
         out << "InvaderColor:" << colorInvaderButton->styleSheet().split(":").last().trimmed() << Qt::endl;
         out << "ShipColor:" << colorShipButton->styleSheet().split(":").last().trimmed() << Qt::endl;
+        out << "PowerupColor:" << colorShipButton->styleSheet().split(":").last().trimmed() << Qt::endl;
         out << "NumberOfInvaders:" << nbInvaderSpinBox->value() << Qt::endl;
         out << "UseBonusOptions:" << useBonusOptions << Qt::endl;
         out << "InvaderSpacing:" << invaderSpacing << Qt::endl;
@@ -331,6 +336,10 @@ void MenuWindow::loadOptionsFromFile() {
         line = in.readLine();
         if (line.startsWith("ShipColor:")) {
             colorShipButton->setStyleSheet(QString("background-color: %1").arg(line.split(":").last().trimmed()));
+        }
+        line = in.readLine();
+        if (line.startsWith("PowerupColor")){
+            colorPowerupButton->setStyleSheet(QString("background-color: %1").arg(line.split(":").last().trimmed()));
         }
         line = in.readLine();
         if (line.startsWith("NumberOfInvaders:")) {
@@ -393,6 +402,10 @@ MenuWindow::~MenuWindow() {
     delete colorBulletButton;
     delete invaderColorLayout;
     delete invaderColorLabel;
+    delete powerupColorLabel;
+    delete powerupColorLayout;
+    delete powerupEditorButton;
+    delete colorPowerupButton;
     delete colorInvaderButton;
     delete shipColorLayout;
     delete shipColorLabel;

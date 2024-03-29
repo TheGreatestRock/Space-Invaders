@@ -28,10 +28,11 @@ GameWindow::GameWindow(QWidget *parent) : QWidget(parent), score(0)
     timer->start(UPDATE_INTERVAL);
     invaderShootTimer->start(INVADER_SHOOT_INTERVAL);
     qDebug() << timer->isActive();
-    timer->stop();
     leftPressed = false;
     rightPressed = false;
     resetGame();
+    timer->stop();
+    invaderShootTimer->stop();
 }
 
 
@@ -261,7 +262,7 @@ void GameWindow::loadOptionsFromFile() {
 }
 
 void GameWindow::handleInvaderShoot() {
-    if (!invader.isEmpty()) {
+    if (!invader.isEmpty() && timer->isActive()) {
         // Select a random invader
         int index = (new QRandomGenerator(QDateTime::currentMSecsSinceEpoch()))->bounded(invader.size());
         Invader* invad = invader.at(index);
@@ -304,6 +305,8 @@ void GameWindow::initializePlayerAndInvaders() {
 void GameWindow::restartTimerIfNotActive() {
     if (!timer->isActive())
         timer->start(UPDATE_INTERVAL);
+    if (!invaderShootTimer->isActive())
+        invaderShootTimer->start(INVADER_SHOOT_INTERVAL);
 }
 
 void GameWindow::resetKeyPresses() {
@@ -453,7 +456,7 @@ void GameWindow::updateGame() {
             continue; // Continue to the next iteration to avoid accessing removed element
         }
     }
-    if (invaderMoveTimer == 0) {
+    if (invaderMoveTimer == 0 && timer->isActive()) {
         // Update invaders position
         for (int i = 0; i < invader.size(); ++i) {
             Invader* invad = invader.at(i);
